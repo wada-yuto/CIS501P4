@@ -7,8 +7,8 @@ using System.Windows.Forms;
 
 namespace Websocket_Client_Chat
 {
-    public delegate bool Message(string message);
-
+    //public delegate bool Message(string message);
+    public delegate List<User> GetAllUsersLogicDel();
     static class Program
     {
         /// <summary>
@@ -20,13 +20,8 @@ namespace Websocket_Client_Chat
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            public static List<User> allUsers = new List<User>();
-
-            public uxCredentialsForm loginForm = new uxCredentialsForm();
-            loginForm.Show();
-
-            
-
+            List<User> allUsers = new List<User>();
+            //uxCredentialsForm f =
             //string name = GetName();
 
 
@@ -34,7 +29,7 @@ namespace Websocket_Client_Chat
             //ChatForm f = new ChatForm(name, c.MessageEntered);
             //c.MessageReceived += f.MessageReceived;
 
-            Application.Run(loginForm);
+            Application.Run(new uxCredentialsForm(allUsers)) ;
         }
 
         // Ask for a name (that is a non-empty string)

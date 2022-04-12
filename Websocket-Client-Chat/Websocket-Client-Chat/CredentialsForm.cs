@@ -12,9 +12,13 @@ namespace Websocket_Client_Chat
 {
     public partial class uxCredentialsForm : Form
     {
-        public uxCredentialsForm()
+        public List<User> _users;
+
+        public uxCredentialsForm(List<User> allUsers)
         {
             InitializeComponent();
+            _users = allUsers;
+
         }
 
         private void CredentialsForm_Load(object sender, EventArgs e)
@@ -32,13 +36,15 @@ namespace Websocket_Client_Chat
             return uxUsernameInput.Text;
         }
 
+        
         private void uxLogin_Click(object sender, EventArgs e)
         {
-            foreach (User u in allUsers)
+            //Implement this in a controller
+            foreach (User user in _users)
             {
-                if (u.Username == GetUsername())
+                if (user.Username == GetUsername())
                 {
-                    Login(u);
+                    Login(user);
                     return;
                 }
             }
@@ -47,7 +53,7 @@ namespace Websocket_Client_Chat
             u.Username = GetUsername();
             u.Password = GetPassword();
             u.Status = "Online";
-            allUsers.Add(u);
+            _users.Add(u);
             Login(u);
 
         }
