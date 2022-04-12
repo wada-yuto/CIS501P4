@@ -10,3 +10,15 @@ C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Client-Chat\Webso
 C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.csproj.CopyComplete
 C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.exe
 C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.pdb
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\bin\Debug\Websocket-Client-Chat.exe.config
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\bin\Debug\Websocket-Client-Chat.exe
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\bin\Debug\Websocket-Client-Chat.pdb
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.csproj.AssemblyReference.cache
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket_Client_Chat.ChatForm.resources
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket_Client_Chat.Properties.Resources.resources
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.csproj.GenerateResource.cache
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.csproj.CoreCompileInputs.cache
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.csproj.CopyComplete
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.exe
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket-Client-Chat.pdb
+C:\Users\ethan\Desktop\re\Pa4\Websocket-Client-Chat\Websocket-Client-Chat\obj\Debug\Websocket_Client_Chat.uxCredentialsForm.resources
