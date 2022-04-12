@@ -1,0 +1,9 @@
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\bin\Debug\Websocket-Server.exe.config
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\bin\Debug\Websocket-Server.exe
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\bin\Debug\Websocket-Server.pdb
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\bin\Debug\websocket-sharp.dll
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\obj\Debug\Websocket-Server.csproj.AssemblyReference.cache
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\obj\Debug\Websocket-Server.csproj.CoreCompileInputs.cache
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\obj\Debug\Websocket-Server.csproj.CopyComplete
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\obj\Debug\Websocket-Server.exe
+C:\Users\yutow\Desktop\wada-yuto-CW-SP2022\Websocket\Websocket-Server\Websocket-Server\obj\Debug\Websocket-Server.pdb
