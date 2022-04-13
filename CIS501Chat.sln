@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Websocket-Server", "Websocket-Server\Websocket-Server.csproj", "{EB5F024D-2D0E-4894-B060-4E25807B8B14}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A71C182-952E-46C6-8490-6ACC1227FA1E} = {2A71C182-952E-46C6-8490-6ACC1227FA1E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Websocket-Client", "Websocket-Client\Websocket-Client.csproj", "{C22610F0-1208-4587-A470-7CFDBFCEB6CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A71C182-952E-46C6-8490-6ACC1227FA1E} = {2A71C182-952E-46C6-8490-6ACC1227FA1E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat-Library", "Chat-Library\Chat-Library.csproj", "{2A71C182-952E-46C6-8490-6ACC1227FA1E}"
 EndProject

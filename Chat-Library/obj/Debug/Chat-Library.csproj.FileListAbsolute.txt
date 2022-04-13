@@ -1,0 +1,9 @@
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\bin\Debug\Chat-Library.dll
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\bin\Debug\Chat-Library.pdb
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\bin\Debug\websocket-sharp.dll
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\bin\Debug\websocket-sharp.xml
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\obj\Debug\Chat-Library.csproj.AssemblyReference.cache
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\obj\Debug\Chat-Library.csproj.CoreCompileInputs.cache
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\obj\Debug\Chat-Library.dll
+C:\Users\yutow\Desktop\CIS501Chat\Chat-Library\obj\Debug\Chat-Library.pdb

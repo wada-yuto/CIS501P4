@@ -44,8 +44,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatController.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

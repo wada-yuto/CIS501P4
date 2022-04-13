@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Websocket_Client_Chat
+namespace Chat_Library
 {
-    public class User
+    public class User :IUser
     {
         private string _username;
         private string _password;
         private string _status;
         private List<User> _contacts;
 
-        public string Username
+        public string UserName
         {
             get { return _username; }
             set { _username = value; }
