@@ -15,7 +15,7 @@ namespace Websocket_Server
         /// <summary>
         /// Real User
         /// </summary>
-        private User _user = new User();
+        private User _user;
 
         /// <summary>
         /// Username
@@ -36,6 +36,11 @@ namespace Websocket_Server
         /// Users contact list all of their friends
         /// </summary>
         public List<User> Contacts { get; set; }
+
+        public UserProxy(User user)
+        {
+            this._user = user;
+        }
 
 
         /// <summary>

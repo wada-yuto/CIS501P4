@@ -39,6 +39,12 @@ namespace Chat_Library
             set { _status = value; }
         }
 
+        public User(string username, string password)
+        {
+            this._username = username;
+            this._password = password;
+        }
+
 
         public List<User> UpdateContactList(User user)
         {

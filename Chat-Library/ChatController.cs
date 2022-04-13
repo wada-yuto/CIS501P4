@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using WebSocketSharp;
 using Chat_Library;
+using Websocket_Server;
 
 namespace Websocket_Client_Chat
 {
-    class ChatController
+    public class ChatController
     {
         private string name;
         private WebSocket ws;
@@ -45,6 +46,12 @@ namespace Websocket_Client_Chat
         {
             //Use UserProxy instead of actual User class then call its function
             User user = new User();
+            UserProxy proxy = new UserProxy(user);
+
+            //Need to pass in the user
+            //proxy.UpdateContactList();
+
+            
 
             
         }
