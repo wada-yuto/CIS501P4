@@ -29,7 +29,7 @@ namespace Websocket_Client_Chat
             //ChatForm f = new ChatForm(name, c.MessageEntered);
             //c.MessageReceived += f.MessageReceived;
 
-            Application.Run(new uxCredentialsForm(allUsers));
+            //Application.Run(new uxCredentialsForm(allUsers));
         }
 
         // Ask for a name (that is a non-empty string)

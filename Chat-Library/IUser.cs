@@ -31,6 +31,13 @@ namespace Chat_Library
         /// </summary>
         List<User> Contacts { get; set; }
 
+        /// <summary>
+        /// Adds user to the contact list
+        /// </summary>
+        /// <param name="user">User that needs to be added to the contact list</param>
+        /// <returns></returns>
+        List<User> UpdateContactList(User user);
+
 
     }
 }

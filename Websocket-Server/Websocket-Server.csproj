@@ -67,5 +67,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chat-Library\Chat-Library.csproj">
+      <Project>{2a71c182-952e-46c6-8490-6acc1227fa1e}</Project>
+      <Name>Chat-Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,5 +38,20 @@ namespace Chat_Library
             get { return _status; }
             set { _status = value; }
         }
+
+
+        public List<User> UpdateContactList(User user)
+        {
+            if (Contacts.Contains(user))
+            {
+                return Contacts;
+            }
+            else
+            {
+                Contacts.Add(user);
+                return Contacts;
+            }
+        }
+
     }
 }
