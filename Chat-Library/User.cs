@@ -44,7 +44,7 @@ namespace Chat_Library
             this._username = username;
             this._password = password;
         }
-
+        
 
         public List<User> UpdateContactList(User user)
         {
