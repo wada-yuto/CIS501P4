@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Chat_Library
 {
-    public class User :IUser
+    public class User : IUser
     {
         private string _username;
         private string _password;
         private string _status;
-        private List<User> _contacts;
+        private List<IUser> _contacts;
+        private int _id;
 
         public string UserName
         {
@@ -26,7 +27,7 @@ namespace Chat_Library
             set { _password = value; }
         }
 
-        public List<User> Contacts
+        public List<IUser> Contacts
         {
             get { return _contacts; }
             set { _contacts = value; }
@@ -39,24 +40,36 @@ namespace Chat_Library
             set { _status = value; }
         }
 
-        public User(string username, string password)
+        public int ServerID
         {
-            this._username = username;
-            this._password = password;
+            get { return _id; }
+            set { _id = value; }
         }
-        
 
-        public List<User> UpdateContactList(User user)
+        public string GetUsername()
         {
-            if (Contacts.Contains(user))
-            {
-                return Contacts;
-            }
-            else
-            {
-                Contacts.Add(user);
-                return Contacts;
-            }
+            return this.UserName;
+        }
+
+        public string GetPassword()
+        {
+            return this.Password;
+        }
+
+        public string GetStatus()
+        {
+            return this.Status;
+        }
+
+        public int GetServerID()
+        {
+            return this.ServerID;
+        }
+
+
+        public List<IUser> GetContactList()
+        {
+            return this.Contacts;
         }
 
     }

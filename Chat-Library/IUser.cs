@@ -11,32 +11,17 @@ namespace Chat_Library
     /// </summary>
     public interface IUser
     {
-        /// <summary>
-        /// UserName that can be get or set
-        /// </summary>
-        string UserName { get; set; }
 
-        /// <summary>
-        /// Password that can be get or set
-        /// </summary>
-        string Password { get; set; }
 
-        /// <summary>
-        /// Users online status
-        /// </summary>
-        string Status { get; set; }
+        string GetUsername();
 
-        /// <summary>
-        /// Contact list
-        /// </summary>
-        List<User> Contacts { get; set; }
+        string GetPassword();
 
-        /// <summary>
-        /// Adds user to the contact list
-        /// </summary>
-        /// <param name="user">User that needs to be added to the contact list</param>
-        /// <returns></returns>
-        List<User> UpdateContactList(User user);
+        string GetStatus();
+
+        int GetServerID();
+
+        List<IUser> GetContactList();
 
 
     }

@@ -32,10 +32,32 @@ namespace Websocket_Server
         /// </summary>
         public string Status { get; set; }
 
+        public int ServerID { get; set; }
+
         /// <summary>
         /// Users contact list all of their friends
         /// </summary>
         public List<User> Contacts { get; set; }
+
+        public string GetUsername()
+        {
+            return this.UserName;
+        }
+
+        public string GetPassword()
+        {
+            return this.Password;
+        }
+
+        public string GetStatus()
+        {
+            return this.Status;
+        }
+
+        public int GetServerID()
+        {
+            return this.ServerID;
+        }
 
 
         /// <summary>
@@ -43,9 +65,9 @@ namespace Websocket_Server
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public List<User> UpdateContactList(User user)
+        public List<IUser> GetContactList()
         {
-            return _user.UpdateContactList(user);
+            
             
         }
 

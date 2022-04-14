@@ -25,7 +25,7 @@ namespace Websocket_Server
         /// <summary>
         /// Password
         /// </summary>
-        public string Password { get; set; }
+        private string Password { get; set; }
 
         /// <summary>
         /// Users Status online or offline
@@ -33,13 +33,39 @@ namespace Websocket_Server
         public string Status { get; set; }
 
         /// <summary>
+        /// ID of the server
+        /// </summary>
+        public int ServerID { get; set; }
+
+        /// <summary>
         /// Users contact list all of their friends
         /// </summary>
-        public List<User> Contacts { get; set; }
+        public List<IUser> Contacts { get; set; }
 
-        public UserProxy(User user)
+        public UserProxy(string username,  string password)
         {
-            this._user = user;
+            this.UserName = username;
+            this.Password = password;
+        }
+
+        public string GetUsername()
+        {
+            return this.UserName;
+        }
+
+        public string GetPassword()
+        {
+            return this.Password;
+        }
+
+        public string GetStatus()
+        {
+            return this.Status;
+        }
+
+        public int GetServerID()
+        {
+            return this.ServerID;
         }
 
 
@@ -48,9 +74,9 @@ namespace Websocket_Server
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public List<User> UpdateContactList(User user)
+        public List<IUser> GetContactList()
         {
-            return _user.UpdateContactList(user);
+            return this.Contacts;
             
         }
 
