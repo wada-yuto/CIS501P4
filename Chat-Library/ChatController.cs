@@ -12,7 +12,7 @@ namespace Websocket_Client_Chat
     public class ChatController
     {
         private string name;
-        private WebSocket ws;
+        public WebSocket ws;
 
         // Event for when a message is received from the server
         //public event Message MessageReceived;
