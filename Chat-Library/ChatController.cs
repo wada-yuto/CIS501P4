@@ -46,7 +46,7 @@ namespace Websocket_Client_Chat
         {
             //Use UserProxy instead of actual User class then call its function
             User user = new User();
-            UserProxy proxy = new UserProxy(user);
+            UserProxy proxy = new UserProxy();
 
             //Need to pass in the user
             //proxy.UpdateContactList();

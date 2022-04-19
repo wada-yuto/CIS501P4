@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatController.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseProxy.cs" />
     <Compile Include="IDatabase.cs" />

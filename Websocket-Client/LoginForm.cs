@@ -15,9 +15,22 @@ namespace Websocket_Client
         //Need to check the database for the username -> Open the contact form
         //Probably need delegates to call ChatController stuff and Database stuff
 
+        string username;
+        string password;
+
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private string GetUsername()
+        {
+            return uxUsernameTextBox.Text;
+        }
+
+        private string GetPassword()
+        {
+            return uxPasswordTextBox.Text;
         }
 
         private void uxCancelButton_Click(object sender, EventArgs e)
@@ -27,9 +40,9 @@ namespace Websocket_Client
 
         private void uxLoginButton_Click(object sender, EventArgs e)
         {
-            //Get username and password
-            string username = uxUsernameTextBox.Text;
-            string password = uxPasswordTextBox.Text;
+            username = GetUsername();
+            password = GetPassword();
+           
             //Check in the Database to see if that user exist (delegate)
             //If it exist, bring up the contact form, makign the contact form should belong in the ChatController
             //If not, make new user, this should be handled in the login logic in the database.
