@@ -72,5 +72,12 @@ namespace Chat_Library
             return this.Contacts;
         }
 
+        public User(string username, string password)
+        {
+            this.UserName = username;
+            this.Password = password;
+            this.Status = "Online";
+        }
+
     }
 }

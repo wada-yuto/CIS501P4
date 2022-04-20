@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chat_Library;
+using Websocket_Client;
 
 namespace Websocket_Client_Chat
 {
@@ -21,6 +23,11 @@ namespace Websocket_Client_Chat
             Application.SetCompatibleTextRenderingDefault(false);
 
             List<User> allUsers = new List<User>();
+            LoginForm logInForm = new LoginForm();
+
+            ChatController controller = new ChatController();
+            logInForm.SetUp(controller.CheckDatabase);
+            Application.Run(logInForm);
             //uxCredentialsForm f =
             //string name = GetName();
 

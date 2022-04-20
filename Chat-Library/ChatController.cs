@@ -17,7 +17,7 @@ namespace Websocket_Client_Chat
         // Event for when a message is received from the server
         //public event Message MessageReceived;
 
-        public ChatController(string name)
+        public ChatController()
         {
             //this.name = name;
 
@@ -44,16 +44,28 @@ namespace Websocket_Client_Chat
 
         public void UpdateContactListLogic()
         {
-            //Use UserProxy instead of actual User class then call its function
-            User user = new User();
-            UserProxy proxy = new UserProxy();
-
-            //Need to pass in the user
-            //proxy.UpdateContactList();
-
             
 
             
+        }
+
+        public IUser CheckDatabase(string username, string password)
+        {
+            DatabaseProxy database = new DatabaseProxy();
+            return database.Login(username, password);
+
+            //Create object of type IDatabase,
+            //Check to see if the user is in the populated file(text file),
+            //We can replace this with list
+            //Call Login(username, password) form database
+            
+        }
+
+        public IUser AddToContactListLogic(string username)
+        {
+            DatabaseProxy database = new DatabaseProxy();
+            IUser user = database.AddToContact(username);
+            return user;            
         }
 
         // Makes sure to close the websocket when the controller is destructed

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebSocketSharp;
 using WebSocketSharp.Server;
+using Chat_Library;
 
 namespace Websocket_Server
 {
@@ -18,6 +19,22 @@ namespace Websocket_Server
     {
         public static List<string> history = new List<string>();
         private static int count;
+
+        public void UpdateUserList(List<IUser> ActiveUsers)
+        {
+            //ActiveUsers = uxActiveUsersListBox
+
+        }
+
+        public void UpdateChatList(List<IUser> Users)
+        {
+
+        }
+
+        protected override void OnClose(CloseEventArgs e)
+        {
+           //When User closes the form, what should it do?
+        }
 
         protected override void OnOpen()
         {

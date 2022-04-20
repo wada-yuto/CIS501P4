@@ -21,27 +21,58 @@ namespace Chat_Library
         /// </summary>
         public List<List<User>> ActiveChats = new List<List<User>>();
 
+        public Dictionary<string, string> AllUsers = new Dictionary<string, string>();
+
+        //Stores all users as IUser instead of key value pair
+        public List<IUser> UserList = new List<IUser>();
+
         public Database()
         {
-
         }
 
-        public IUser Login(string username)
+        public IUser Login(string username, string password)
         {
-            
+            foreach (KeyValuePair<String, string> pair in AllUsers)
+            {
+                if (pair.Key.Equals(username))
+                {
+                    if (pair.Value.Equals(password))
+                    {
+                        User user = new User(username, password);
+                        UserList.Add(user);
+                        //Return existing user
+                        return user;
+                    }
+                }
+            }
+
+            //Add user that is not in the dictionary
+            AllUsers.Add(username, password);
+            User newUser = new User(username, password);
+            UserList.Add(newUser);
+            //Return new user
+            return newUser;
         }
 
-        public IUser Logout(string username)
+        public void Logout(string username)
         {
 
         }
 
         public IUser AddtoContact(string username)
         {
-
+            foreach(User user in UserList)
+            {
+                if (user.UserName.Equals(username))
+                {
+                    return user;
+                }
+            }
+            //If we don't find any user with given username
+            return null;
         }
 
-        public List<IUser> GetAllOnlineAccounts()
+        public void GetAllOnlineAccounts()
         {
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Chat_Library;
 
 namespace Websocket_Server
 {
@@ -16,5 +17,17 @@ namespace Websocket_Server
         {
             InitializeComponent();
         }
+
+        public void UpdateUserList(List<IUser> ActiveUsers)
+        {
+
+        }
+
+        public void UpdateChatList(List<IUser> ActiveChats)
+        {
+
+        }
+
+        public SendDelegate()
     }
 }

@@ -29,33 +29,33 @@ namespace Websocket_Client
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uxFriendListListBox = new System.Windows.Forms.ListBox();
+            this.uxRemoveFriendButton = new System.Windows.Forms.Button();
             this.uxContactAddLabel = new System.Windows.Forms.Label();
-            this.uxAddContactUsername = new System.Windows.Forms.TextBox();
-            this.uxAdd = new System.Windows.Forms.Button();
-            this.uxLabel = new System.Windows.Forms.Label();
-            this.uxStart = new System.Windows.Forms.Button();
+            this.uxAddContactUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.uxAddFriendButton = new System.Windows.Forms.Button();
+            this.uxFriendListLabel = new System.Windows.Forms.Label();
+            this.uxStartChatButton = new System.Windows.Forms.Button();
             this.uxStartChatting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // uxFriendListListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(27, 49);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(251, 355);
-            this.listBox1.TabIndex = 0;
+            this.uxFriendListListBox.FormattingEnabled = true;
+            this.uxFriendListListBox.Location = new System.Drawing.Point(27, 49);
+            this.uxFriendListListBox.Name = "uxFriendListListBox";
+            this.uxFriendListListBox.Size = new System.Drawing.Size(251, 355);
+            this.uxFriendListListBox.TabIndex = 0;
             // 
-            // button1
+            // uxRemoveFriendButton
             // 
-            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(284, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Remove Friend";
-            this.button1.UseVisualStyleBackColor = true;
+            this.uxRemoveFriendButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxRemoveFriendButton.Location = new System.Drawing.Point(284, 59);
+            this.uxRemoveFriendButton.Name = "uxRemoveFriendButton";
+            this.uxRemoveFriendButton.Size = new System.Drawing.Size(251, 37);
+            this.uxRemoveFriendButton.TabIndex = 1;
+            this.uxRemoveFriendButton.Text = "Remove Friend";
+            this.uxRemoveFriendButton.UseVisualStyleBackColor = true;
             // 
             // uxContactAddLabel
             // 
@@ -67,42 +67,43 @@ namespace Websocket_Client
             this.uxContactAddLabel.TabIndex = 2;
             this.uxContactAddLabel.Text = "Enter contact username you want to add";
             // 
-            // uxAddContactUsername
+            // uxAddContactUsernameTextBox
             // 
-            this.uxAddContactUsername.Location = new System.Drawing.Point(284, 142);
-            this.uxAddContactUsername.Name = "uxAddContactUsername";
-            this.uxAddContactUsername.Size = new System.Drawing.Size(251, 20);
-            this.uxAddContactUsername.TabIndex = 3;
+            this.uxAddContactUsernameTextBox.Location = new System.Drawing.Point(284, 142);
+            this.uxAddContactUsernameTextBox.Name = "uxAddContactUsernameTextBox";
+            this.uxAddContactUsernameTextBox.Size = new System.Drawing.Size(251, 20);
+            this.uxAddContactUsernameTextBox.TabIndex = 3;
             // 
-            // uxAdd
+            // uxAddFriendButton
             // 
-            this.uxAdd.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxAdd.Location = new System.Drawing.Point(284, 168);
-            this.uxAdd.Name = "uxAdd";
-            this.uxAdd.Size = new System.Drawing.Size(255, 37);
-            this.uxAdd.TabIndex = 4;
-            this.uxAdd.Text = "Add Friend";
-            this.uxAdd.UseVisualStyleBackColor = true;
+            this.uxAddFriendButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxAddFriendButton.Location = new System.Drawing.Point(284, 168);
+            this.uxAddFriendButton.Name = "uxAddFriendButton";
+            this.uxAddFriendButton.Size = new System.Drawing.Size(255, 37);
+            this.uxAddFriendButton.TabIndex = 4;
+            this.uxAddFriendButton.Text = "Add Friend";
+            this.uxAddFriendButton.UseVisualStyleBackColor = true;
+            this.uxAddFriendButton.Click += new System.EventHandler(this.uxAddFriendButton_Click);
             // 
-            // uxLabel
+            // uxFriendListLabel
             // 
-            this.uxLabel.AutoSize = true;
-            this.uxLabel.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLabel.Location = new System.Drawing.Point(57, 25);
-            this.uxLabel.Name = "uxLabel";
-            this.uxLabel.Size = new System.Drawing.Size(189, 21);
-            this.uxLabel.TabIndex = 5;
-            this.uxLabel.Text = "(Username)\'s Friends List";
+            this.uxFriendListLabel.AutoSize = true;
+            this.uxFriendListLabel.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxFriendListLabel.Location = new System.Drawing.Point(57, 25);
+            this.uxFriendListLabel.Name = "uxFriendListLabel";
+            this.uxFriendListLabel.Size = new System.Drawing.Size(189, 21);
+            this.uxFriendListLabel.TabIndex = 5;
+            this.uxFriendListLabel.Text = "(Username)\'s Friends List";
             // 
-            // uxStart
+            // uxStartChatButton
             // 
-            this.uxStart.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStart.Location = new System.Drawing.Point(284, 367);
-            this.uxStart.Name = "uxStart";
-            this.uxStart.Size = new System.Drawing.Size(255, 37);
-            this.uxStart.TabIndex = 6;
-            this.uxStart.Text = "Start Chat";
-            this.uxStart.UseVisualStyleBackColor = true;
+            this.uxStartChatButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxStartChatButton.Location = new System.Drawing.Point(284, 367);
+            this.uxStartChatButton.Name = "uxStartChatButton";
+            this.uxStartChatButton.Size = new System.Drawing.Size(255, 37);
+            this.uxStartChatButton.TabIndex = 6;
+            this.uxStartChatButton.Text = "Start Chat";
+            this.uxStartChatButton.UseVisualStyleBackColor = true;
             // 
             // uxStartChatting
             // 
@@ -120,13 +121,13 @@ namespace Websocket_Client
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 424);
             this.Controls.Add(this.uxStartChatting);
-            this.Controls.Add(this.uxStart);
-            this.Controls.Add(this.uxLabel);
-            this.Controls.Add(this.uxAdd);
-            this.Controls.Add(this.uxAddContactUsername);
+            this.Controls.Add(this.uxStartChatButton);
+            this.Controls.Add(this.uxFriendListLabel);
+            this.Controls.Add(this.uxAddFriendButton);
+            this.Controls.Add(this.uxAddContactUsernameTextBox);
             this.Controls.Add(this.uxContactAddLabel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.uxRemoveFriendButton);
+            this.Controls.Add(this.uxFriendListListBox);
             this.Name = "ContactForm";
             this.Text = "ContactForm";
             this.ResumeLayout(false);
@@ -136,13 +137,13 @@ namespace Websocket_Client
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox uxFriendListListBox;
+        private System.Windows.Forms.Button uxRemoveFriendButton;
         private System.Windows.Forms.Label uxContactAddLabel;
-        private System.Windows.Forms.TextBox uxAddContactUsername;
-        private System.Windows.Forms.Button uxAdd;
-        private System.Windows.Forms.Label uxLabel;
-        private System.Windows.Forms.Button uxStart;
+        private System.Windows.Forms.TextBox uxAddContactUsernameTextBox;
+        private System.Windows.Forms.Button uxAddFriendButton;
+        private System.Windows.Forms.Label uxFriendListLabel;
+        private System.Windows.Forms.Button uxStartChatButton;
         private System.Windows.Forms.Label uxStartChatting;
     }
 }

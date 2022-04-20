@@ -13,7 +13,7 @@ namespace Chat_Library
         /// </summary>
         /// <param name="username">Name of the username that is logging in</param>
         /// <returns>Returns the IUser that logged in</returns>
-        IUser Login(string username);
+        IUser Login(string username, string password);
 
         /// <summary>
         /// Used to log out of the chat

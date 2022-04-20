@@ -20,34 +20,53 @@ namespace Chat_Library
             
         }
 
-        public IUser Login(string username)
+        public IUser Login(string username, string password)
         {
             if(database == null)
             {
                 database = new Database();
             }
-            return database.Login(username);
+            return database.Login(username, password);
         }
 
-        public IUser Logout(string username)
+        public void Logout(string username)
         {
             if (database == null)
             {
                 database = new Database();
             }
-            return database.Login(username);
+            //return database.Login(username);
         }
 
         public IUser AddToContact(string username)
         {
             //Need to implement the code
+
+            if (database == null)
+            {
+                database = new Database();
+            }
+            return database.AddtoContact(username);
         }
 
-        public List<IUser> GetAllOnlineAccounts()
+        public void GetAllOnlineAccounts()
         {
             //Need to implement the code
         }
 
+        IUser IDatabase.Logout(string username)
+        {
+            throw new NotImplementedException();
+        }
 
+        IUser IDatabase.AddToContact(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<IUser> IDatabase.GetAllOnlineAccounts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
