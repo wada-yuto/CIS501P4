@@ -10,3 +10,5 @@ C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\obj\Debug\Websocket-Server.ex
 C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\obj\Debug\Websocket-Server.pdb
 C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\obj\Debug\Websocket_Server.AdminPanel.resources
 C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\obj\Debug\Websocket-Server.csproj.GenerateResource.cache
+C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\bin\Debug\Chat-Library.dll
+C:\Users\yutow\Desktop\CIS501Chat\Websocket-Server\bin\Debug\Chat-Library.pdb

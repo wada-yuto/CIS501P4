@@ -9,6 +9,7 @@ using Websocket_Server;
 
 namespace Websocket_Client_Chat
 {
+    public delegate bool Message(string message);
     public class ChatController
     {
         private string name;

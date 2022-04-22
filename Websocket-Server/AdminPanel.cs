@@ -28,6 +28,5 @@ namespace Websocket_Server
 
         }
 
-        public SendDelegate()
     }
 }

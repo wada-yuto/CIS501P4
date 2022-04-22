@@ -9,7 +9,7 @@ using Websocket_Client;
 
 namespace Websocket_Client_Chat
 {
-    //public delegate bool Message(string message);
+    public delegate bool Message(string message);
     public delegate List<User> GetAllUsersLogicDel();
     static class Program
     {
@@ -26,17 +26,15 @@ namespace Websocket_Client_Chat
             LoginForm logInForm = new LoginForm();
 
             ChatController controller = new ChatController();
-            logInForm.SetUp(controller.CheckDatabase);
-            Application.Run(logInForm);
+            logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic);
+            //Application.Run(logInForm);
             //uxCredentialsForm f =
             //string name = GetName();
 
+            ChatForm f = new ChatForm(controller.MessageEntered);
+            controller.MessageReceived += f.MessageReceived;
 
-            //ChatController c = new ChatController(name);
-            //ChatForm f = new ChatForm(name, c.MessageEntered);
-            //c.MessageReceived += f.MessageReceived;
-
-            //Application.Run(new uxCredentialsForm(allUsers));
+            Application.Run(logInForm);
         }
 
         // Ask for a name (that is a non-empty string)

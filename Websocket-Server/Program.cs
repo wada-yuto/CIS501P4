@@ -52,7 +52,7 @@ namespace Websocket_Server
             }
 
             AdminPanel form = new AdminPanel();
-            form.Show();
+            Application.Run(form);
 
             Console.WriteLine("\n Server Is Online");
             Console.WriteLine("Press Enter to exit.");

@@ -15,7 +15,7 @@ namespace Websocket_Server
         /// <summary>
         /// Real User
         /// </summary>
-        private User _user = new User();
+        private User _user;
 
         /// <summary>
         /// Username
@@ -59,17 +59,21 @@ namespace Websocket_Server
             return this.ServerID;
         }
 
+        public List<IUser> GetContactList()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public List<IUser> GetContactList()
-        {
-            
-            
-        }
+        //public List<IUser> GetContactList()
+        //{
+
+
+        //}
 
 
 
