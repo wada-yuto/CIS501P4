@@ -15,16 +15,15 @@ namespace Websocket_Client_Chat
         public WebSocket ws;
 
         // Event for when a message is received from the server
-        //public event Message MessageReceived;
-
+        public event Message MessageReceived;
         public ChatController()
         {
             //this.name = name;
 
             //// Connects to the server
-            //ws = new WebSocket("ws://127.0.0.1:8001/chat");
-            //ws.OnMessage += (sender, e) => { if (MessageReceived != null) MessageReceived(e.Data); };
-            //ws.Connect();
+            ws = new WebSocket("ws://127.0.0.1:8001/chat");
+            ws.OnMessage += (sender, e) => { if (MessageReceived != null) MessageReceived(e.Data); };
+            ws.Connect();
         }
 
         // Handles when a new message is entered by the user
