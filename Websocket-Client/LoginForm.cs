@@ -24,9 +24,13 @@ namespace Websocket_Client
         private CheckDatabaseDel CheckDatabaseDelegate;
         private AddToContactDel AddToContactDelegate;
 
-        public LoginForm()
+        private ChatForm form;
+
+        public LoginForm(ChatForm form)
         {
             InitializeComponent();
+            this.form = form;
+
         }
 
         public void SetUp(CheckDatabaseDel CheckDatabaseDelegate, AddToContactDel AddToContactDelegate)
@@ -56,7 +60,7 @@ namespace Websocket_Client
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
             ContactForm contactForm = new ContactForm(user,AddToContactDelegate);
-            contactForm.Show();
+            form.Show();
 
 
             //Check in the Database to see if that user exist (delegate)

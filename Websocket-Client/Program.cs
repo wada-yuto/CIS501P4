@@ -22,16 +22,17 @@ namespace Websocket_Client_Chat
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            List<User> allUsers = new List<User>();
-            LoginForm logInForm = new LoginForm();
-
             ChatController controller = new ChatController();
+            List<User> allUsers = new List<User>();
+
+            ChatForm f = new ChatForm(controller.MessageEntered);
+            LoginForm logInForm = new LoginForm(f);
+
             logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic);
             //Application.Run(logInForm);
             //uxCredentialsForm f =
             //string name = GetName();
 
-            ChatForm f = new ChatForm(controller.MessageEntered);
             controller.MessageReceived += f.MessageReceived;
 
             Application.Run(logInForm);

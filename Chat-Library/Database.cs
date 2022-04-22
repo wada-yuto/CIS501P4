@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,15 @@ namespace Chat_Library
             //If we don't find any user with given username
             return null;
         }
+
+        //private string SerializeAccount(IUser user)
+        //{
+        //    JsonSerializerSettings settings = new JsonSerializerSettings
+        //    {
+        //        ContractResolver = new CustomJsonContractResolver(),
+        //        PreserveReferencesHandling = PreserveReferencesHandling.Objects
+        //    };
+        //}
 
         public void GetAllOnlineAccounts()
         {
