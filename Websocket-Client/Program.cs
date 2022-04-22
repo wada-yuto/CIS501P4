@@ -27,6 +27,7 @@ namespace Websocket_Client_Chat
 
             ChatForm f = new ChatForm(controller.MessageEntered);
             LoginForm logInForm = new LoginForm(f);
+            
 
             logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic);
             //Application.Run(logInForm);

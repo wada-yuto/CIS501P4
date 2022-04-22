@@ -59,8 +59,8 @@ namespace Websocket_Client
             username = GetUsername();
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
-            ContactForm contactForm = new ContactForm(user,AddToContactDelegate);
-            form.Show();
+            ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate);
+            contactForm.Show();
 
 
             //Check in the Database to see if that user exist (delegate)

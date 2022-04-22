@@ -17,13 +17,15 @@ namespace Websocket_Client
         private User user;
         private AddToContactDel AddToContactDelegate;
         private string username;
-        public ContactForm(User user, AddToContactDel AddToContactDelegate)
+        private ChatForm form;
+        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate)
         {
             this.user = user;
             InitializeComponent();
             uxFriendListLabel.Text = user.UserName + "'s Friend List";
             //SetUp Method
             this.AddToContactDelegate = AddToContactDelegate;
+            form = chatform;
         }
         /// <summary>
         /// Return textbox content
@@ -52,6 +54,11 @@ namespace Websocket_Client
                 MessageBox.Show("This user has been added to your contact");
             }
             //Ping Server for change
+        }
+
+        private void uxStartChatButton_Click(object sender, EventArgs e)
+        {
+            form.Show();
         }
     }
 }

@@ -104,6 +104,7 @@ namespace Websocket_Client
             this.uxStartChatButton.TabIndex = 6;
             this.uxStartChatButton.Text = "Start Chat";
             this.uxStartChatButton.UseVisualStyleBackColor = true;
+            this.uxStartChatButton.Click += new System.EventHandler(this.uxStartChatButton_Click);
             // 
             // uxStartChatting
             // 
