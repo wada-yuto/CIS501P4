@@ -29,53 +29,91 @@ namespace Websocket_Server
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.uxAllUsersListBox = new System.Windows.Forms.ListBox();
+            this.uxOnlineUsersListBox = new System.Windows.Forms.ListBox();
+            this.uxChatRoomListBoxs = new System.Windows.Forms.ListBox();
+            this.uxAllUsersLabel = new System.Windows.Forms.Label();
+            this.uxOnlineUsersLabel = new System.Windows.Forms.Label();
+            this.uxChatRoomsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // uxAllUsersListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(164, 329);
-            this.listBox1.TabIndex = 0;
+            this.uxAllUsersListBox.FormattingEnabled = true;
+            this.uxAllUsersListBox.Location = new System.Drawing.Point(12, 38);
+            this.uxAllUsersListBox.Name = "uxAllUsersListBox";
+            this.uxAllUsersListBox.Size = new System.Drawing.Size(164, 303);
+            this.uxAllUsersListBox.TabIndex = 0;
             // 
-            // listBox2
+            // uxOnlineUsersListBox
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(197, 12);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(169, 329);
-            this.listBox2.TabIndex = 1;
+            this.uxOnlineUsersListBox.FormattingEnabled = true;
+            this.uxOnlineUsersListBox.Location = new System.Drawing.Point(197, 38);
+            this.uxOnlineUsersListBox.Name = "uxOnlineUsersListBox";
+            this.uxOnlineUsersListBox.Size = new System.Drawing.Size(169, 303);
+            this.uxOnlineUsersListBox.TabIndex = 1;
             // 
-            // listBox3
+            // uxChatRoomListBoxs
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(386, 12);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(169, 329);
-            this.listBox3.TabIndex = 2;
+            this.uxChatRoomListBoxs.FormattingEnabled = true;
+            this.uxChatRoomListBoxs.Location = new System.Drawing.Point(386, 38);
+            this.uxChatRoomListBoxs.Name = "uxChatRoomListBoxs";
+            this.uxChatRoomListBoxs.Size = new System.Drawing.Size(169, 303);
+            this.uxChatRoomListBoxs.TabIndex = 2;
+            // 
+            // uxAllUsersLabel
+            // 
+            this.uxAllUsersLabel.AutoSize = true;
+            this.uxAllUsersLabel.Location = new System.Drawing.Point(57, 22);
+            this.uxAllUsersLabel.Name = "uxAllUsersLabel";
+            this.uxAllUsersLabel.Size = new System.Drawing.Size(48, 13);
+            this.uxAllUsersLabel.TabIndex = 3;
+            this.uxAllUsersLabel.Text = "All Users";
+            // 
+            // uxOnlineUsersLabel
+            // 
+            this.uxOnlineUsersLabel.AutoSize = true;
+            this.uxOnlineUsersLabel.Location = new System.Drawing.Point(243, 22);
+            this.uxOnlineUsersLabel.Name = "uxOnlineUsersLabel";
+            this.uxOnlineUsersLabel.Size = new System.Drawing.Size(67, 13);
+            this.uxOnlineUsersLabel.TabIndex = 4;
+            this.uxOnlineUsersLabel.Text = "Online Users";
+            // 
+            // uxChatRoomsLabel
+            // 
+            this.uxChatRoomsLabel.AutoSize = true;
+            this.uxChatRoomsLabel.Location = new System.Drawing.Point(425, 22);
+            this.uxChatRoomsLabel.Name = "uxChatRoomsLabel";
+            this.uxChatRoomsLabel.Size = new System.Drawing.Size(106, 13);
+            this.uxChatRoomsLabel.TabIndex = 5;
+            this.uxChatRoomsLabel.Text = "Chat Rooms Opened";
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 353);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.uxChatRoomsLabel);
+            this.Controls.Add(this.uxOnlineUsersLabel);
+            this.Controls.Add(this.uxAllUsersLabel);
+            this.Controls.Add(this.uxChatRoomListBoxs);
+            this.Controls.Add(this.uxOnlineUsersListBox);
+            this.Controls.Add(this.uxAllUsersListBox);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox uxAllUsersListBox;
+        private System.Windows.Forms.ListBox uxOnlineUsersListBox;
+        private System.Windows.Forms.ListBox uxChatRoomListBoxs;
+        private System.Windows.Forms.Label uxAllUsersLabel;
+        private System.Windows.Forms.Label uxOnlineUsersLabel;
+        private System.Windows.Forms.Label uxChatRoomsLabel;
     }
 }

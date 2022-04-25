@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +86,24 @@ namespace Chat_Library
         public void GetAllOnlineAccounts()
         {
 
+        }
+
+        public void GetUsersFromFile(string fileName)
+        {
+            // need to deserialize the object in the text file
+            // add it to the list of users 
+            // return the list of all users in the text file
+            List<IUser> users = new List<IUser>();
+            using(StreamReader sr = new StreamReader(fileName))
+            {
+                while (!sr.EndOfStream)
+                {
+                    // need to deserialize the object in the text file
+                    // add it to the list of users 
+                    // return the list of all users in the text file
+                    // need to change the return type of this methode back to List<IUser>
+                }
+            }
         }
     }
 }
