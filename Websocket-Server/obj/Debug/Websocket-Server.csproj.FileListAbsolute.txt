@@ -26,3 +26,19 @@ C:\Users\tucke\Desktop\New folder\Websocket-Server\obj\Debug\Websocket-Server.cs
 C:\Users\tucke\Desktop\New folder\Websocket-Server\obj\Debug\Websocket-Server.csproj.CopyComplete
 C:\Users\tucke\Desktop\New folder\Websocket-Server\obj\Debug\Websocket-Server.exe
 C:\Users\tucke\Desktop\New folder\Websocket-Server\obj\Debug\Websocket-Server.pdb
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Websocket-Server.exe.config
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Websocket-Server.exe
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Websocket-Server.pdb
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Chat-Library.dll
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\websocket-sharp.dll
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Chat-Library.pdb
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\websocket-sharp.xml
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.csproj.AssemblyReference.cache
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket_Server.AdminPanel.resources
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.csproj.GenerateResource.cache
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.csproj.CoreCompileInputs.cache
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.csproj.CopyComplete
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.exe
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\obj\Debug\Websocket-Server.pdb
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Server\bin\Debug\Newtonsoft.Json.xml

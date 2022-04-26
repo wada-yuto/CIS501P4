@@ -13,6 +13,8 @@ namespace Chat_Library
         //Make list of all online users
         //Make list of all the chats tha are active
 
+        private string FileName = "C:\\Users\\yuto808263\\Desktop\\CIS501Chat\\CIS501P4\\Chat-Library\\AllUsers.txt;";
+
         /// <summary>
         /// List of all online users
         /// </summary>
@@ -51,6 +53,11 @@ namespace Chat_Library
             //Add user that is not in the dictionary
             AllUsers.Add(username, password);
             User newUser = new User(username, password);
+            string user2 = SerializeAccount(newUser);
+            using (StreamWriter writer = new StreamWriter("AllUsers.txt", true))
+            {
+                writer.WriteLine(user2);
+            }
             UserList.Add(newUser);
             //Return new user
             return newUser;
@@ -74,14 +81,20 @@ namespace Chat_Library
             return null;
         }
 
-        //private string SerializeAccount(IUser user)
-        //{
-        //    JsonSerializerSettings settings = new JsonSerializerSettings
-        //    {
-        //        ContractResolver = new CustomJsonContractResolver(),
-        //        PreserveReferencesHandling = PreserveReferencesHandling.Objects
-        //    };
-        //}
+        
+
+        private string SerializeAccount(IUser user)
+        {
+            string jsonString = JsonConvert.SerializeObject(user);
+            return jsonString;
+        }
+
+        private IUser DeSerializeAccount(string stringUser)
+        {
+            IUser user = (IUser)JsonConvert.DeserializeObject(stringUser);
+            return user;
+
+        }
 
         public void GetAllOnlineAccounts()
         {

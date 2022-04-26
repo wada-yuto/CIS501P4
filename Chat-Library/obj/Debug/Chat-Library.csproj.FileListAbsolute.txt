@@ -29,3 +29,5 @@ C:\Users\tucke\Desktop\New folder\Chat-Library\obj\Debug\Chat-Library.csproj.Cor
 C:\Users\tucke\Desktop\New folder\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
 C:\Users\tucke\Desktop\New folder\Chat-Library\obj\Debug\Chat-Library.dll
 C:\Users\tucke\Desktop\New folder\Chat-Library\obj\Debug\Chat-Library.pdb
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Chat-Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Chat-Library\bin\Debug\Newtonsoft.Json.xml
