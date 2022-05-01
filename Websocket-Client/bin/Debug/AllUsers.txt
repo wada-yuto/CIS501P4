@@ -1,7 +1,4 @@
 {"UserName":"testuser1","Password":"ILoveCheese","Contacts":null,"Status":"Online","ServerID":0}
 {"UserName":"testuser2","Password":"ILoveCats","Contacts":null,"Status":"Online","ServerID":0}
-{"UserName":"yutowada","Password":"password","Contacts":[],"Status":"Online","ServerID":0}
-
-{"test":"This is test string","UserName":"yutowada","Password":"password","Contacts":[],"Status":"Online","ServerID":0}
-{"UserName":"yutowada","Password":"password","Contacts":[],"Status":"Online","ServerID":0}
-{"UserName":"yutowada","Password":"password","Contacts":[],"Status":"Online","ServerID":0}
+{"UserName":"yutowada","Password":"password","Contacts":[{"UserName":"testuser1","Password":"ILoveCheese","Contacts":null,"Status":"Online","ServerID":0}],"Status":"Online","ServerID":0}
+{"UserName":"newuser","Password":"testpassword","Contacts":[],"Status":"Online","ServerID":0}

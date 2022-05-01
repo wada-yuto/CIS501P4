@@ -42,11 +42,11 @@ namespace Websocket_Client_Chat
             }
         }
 
-        public void UpdateContactListLogic()
+        public void UpdateContactListLogic(IUser user)
         {
-            
+            DatabaseProxy database = new DatabaseProxy();
+            database.UpdateContact(user);
 
-            
         }
 
         public IUser CheckDatabase(string username, string password)

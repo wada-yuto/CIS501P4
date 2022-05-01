@@ -16,15 +16,17 @@ namespace Websocket_Client
     {
         private User user;
         private AddToContactDel AddToContactDelegate;
+        private UpdateContactListDel UpdateContactDelegate;
         private string username;
         private ChatForm form;
-        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate)
+        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate)
         {
             this.user = user;
             InitializeComponent();
             uxFriendListLabel.Text = user.UserName + "'s Friend List";
             //SetUp Method
             this.AddToContactDelegate = AddToContactDelegate;
+            this.UpdateContactDelegate = UpdateContactDelegate;
             form = chatform;
             
         }
@@ -36,7 +38,6 @@ namespace Websocket_Client
         {
             return uxAddContactUsernameTextBox.Text;
         }
-
 
         private void uxAddFriendButton_Click(object sender, EventArgs e)
         {
@@ -54,6 +55,7 @@ namespace Websocket_Client
                 this.user.Contacts.Add(user);
                 MessageBox.Show("This user has been added to your contact");
             }
+            UpdateContactDelegate(this.user);
             uxFriendListListBox.DataSource = null;
             uxFriendListListBox.DataSource = this.user.Contacts;
 

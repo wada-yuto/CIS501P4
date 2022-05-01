@@ -29,7 +29,7 @@ namespace Websocket_Client_Chat
             LoginForm logInForm = new LoginForm(f);
             
 
-            logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic);
+            logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic, controller.UpdateContactListLogic);
             //Application.Run(logInForm);
             //uxCredentialsForm f =
             //string name = GetName();

@@ -13,6 +13,7 @@ namespace Websocket_Client
 {
     public delegate IUser CheckDatabaseDel(string username, string password);
     public delegate IUser AddToContactDel(string username);
+    public delegate void UpdateContactListDel(IUser user);
     public partial class LoginForm : Form
     {
         //Need to check the database for the username -> Open the contact form
@@ -23,6 +24,7 @@ namespace Websocket_Client
 
         private CheckDatabaseDel CheckDatabaseDelegate;
         private AddToContactDel AddToContactDelegate;
+        private UpdateContactListDel UpdateContactListDelegate;
 
         private ChatForm form;
 
@@ -33,10 +35,11 @@ namespace Websocket_Client
 
         }
 
-        public void SetUp(CheckDatabaseDel CheckDatabaseDelegate, AddToContactDel AddToContactDelegate)
+        public void SetUp(CheckDatabaseDel CheckDatabaseDelegate, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactListDelegate)
         {
             this.CheckDatabaseDelegate = CheckDatabaseDelegate;
             this.AddToContactDelegate = AddToContactDelegate;
+            this.UpdateContactListDelegate = UpdateContactListDelegate;
         }
 
         private string GetUsername()
@@ -59,7 +62,7 @@ namespace Websocket_Client
             username = GetUsername();
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
-            ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate);
+            ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate,UpdateContactListDelegate);
             contactForm.Show();
 
 

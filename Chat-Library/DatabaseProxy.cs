@@ -49,6 +49,15 @@ namespace Chat_Library
             return database.AddtoContact(username);
         }
 
+        public void UpdateContact(IUser user)
+        {
+            if (database == null)
+            {
+                database = new Database();
+            }
+            database.UpdateContact(user);
+        }
+
         public void GetAllOnlineAccounts()
         {
             //Need to implement the code

@@ -54,9 +54,25 @@ namespace Chat_Library
             AllUsers.Add(username, password);
             User newUser = new User(username, password);
             string user2 = SerializeAccount(newUser);
-            using (StreamWriter writer = new StreamWriter("AllUsers.txt", true))
+            bool exist = false;
+            using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             {
-                writer.WriteLine(user2);
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line.Contains(newUser.UserName))
+                    {
+                        exist = true;
+                    }
+                    continue;
+                }
+            }
+            if (!exist)
+            {
+                using (StreamWriter writer = new StreamWriter("AllUsers.txt", true))
+                {
+                    writer.WriteLine(user2);
+                }
             }
             UserList.Add(newUser);
             //Return new user
@@ -85,6 +101,55 @@ namespace Chat_Library
 
             }
             return null;
+        }
+
+        public void UpdateContact(IUser user)
+        {
+            int lineNumber = GetLine(user.GetUsername());
+            string account = SerializeAccount(user);
+            LineChanger(account, lineNumber);
+        }
+
+        /// <summary>
+        /// Return the line number that username is at
+        /// </summary>
+        /// <param name="username">name of the user</param>
+        /// <returns>line number that username is at</returns>
+        private int GetLine(string username)
+        {
+            int lineNum = 0;
+            using (StreamReader reader = new StreamReader("AllUsers.txt",true))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    lineNum++;
+                    if (line.Contains(username))
+                        return lineNum;
+                }
+            }
+            return -1;
+
+
+            //using (StreamReader reader = new StreamReader("AllUsers.txt", true))
+            //{
+            //    string line;
+            //    while ((line = reader.ReadLine()) != null)
+            //    {
+            //        if (line.Contains(newUser.UserName))
+            //        {
+            //            exist = true;
+            //        }
+            //        continue;
+            //    }
+            //}
+        }
+
+        private void LineChanger(string newText, int lineNumber)
+        {
+            string[] arrLine = File.ReadAllLines("AllUsers.txt");
+            arrLine[lineNumber - 1] = newText;
+            File.WriteAllLines("AllUsers.txt", arrLine);
         }
 
         

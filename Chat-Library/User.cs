@@ -76,7 +76,7 @@ namespace Chat_Library
         public User(string username, string password)
         {
             this._username = username;
-            this.Password = password;
+            this._password = password;
             this.Status = "Online";
         }
 
