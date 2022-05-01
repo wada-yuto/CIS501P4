@@ -65,7 +65,7 @@ namespace Websocket_Client_Chat
         {
             DatabaseProxy database = new DatabaseProxy();
             IUser user = database.AddToContact(username);
-            return user;            
+            return user;          
         }
 
         // Makes sure to close the websocket when the controller is destructed

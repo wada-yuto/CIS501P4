@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,16 +65,11 @@ namespace Websocket_Server
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        //public List<IUser> GetContactList()
-        //{
+        BindingList<IUser> IUser.GetContactList()
+        {
+            throw new NotImplementedException();
+        }
 
-
-        //}
 
 
 

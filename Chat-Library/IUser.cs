@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Chat_Library
 {
@@ -21,7 +22,7 @@ namespace Chat_Library
 
         int GetServerID();
 
-        List<IUser> GetContactList();
+        BindingList<IUser> GetContactList();
 
 
     }

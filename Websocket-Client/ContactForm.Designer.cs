@@ -29,7 +29,9 @@ namespace Websocket_Client
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uxFriendListListBox = new System.Windows.Forms.ListBox();
+            this.contactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uxRemoveFriendButton = new System.Windows.Forms.Button();
             this.uxContactAddLabel = new System.Windows.Forms.Label();
             this.uxAddContactUsernameTextBox = new System.Windows.Forms.TextBox();
@@ -37,6 +39,13 @@ namespace Websocket_Client
             this.uxFriendListLabel = new System.Windows.Forms.Label();
             this.uxStartChatButton = new System.Windows.Forms.Button();
             this.uxStartChatting = new System.Windows.Forms.Label();
+            this.contactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contactsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uxFriendListListBox
@@ -47,6 +56,11 @@ namespace Websocket_Client
             this.uxFriendListListBox.Size = new System.Drawing.Size(251, 355);
             this.uxFriendListListBox.TabIndex = 0;
             // 
+            // contactsBindingSource
+            // 
+            this.contactsBindingSource.DataMember = "Contacts";
+            this.contactsBindingSource.DataSource = this.userBindingSource;
+            // 
             // uxRemoveFriendButton
             // 
             this.uxRemoveFriendButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -56,6 +70,7 @@ namespace Websocket_Client
             this.uxRemoveFriendButton.TabIndex = 1;
             this.uxRemoveFriendButton.Text = "Remove Friend";
             this.uxRemoveFriendButton.UseVisualStyleBackColor = true;
+            this.uxRemoveFriendButton.Click += new System.EventHandler(this.uxRemoveFriendButton_Click);
             // 
             // uxContactAddLabel
             // 
@@ -110,11 +125,26 @@ namespace Websocket_Client
             // 
             this.uxStartChatting.AutoSize = true;
             this.uxStartChatting.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStartChatting.Location = new System.Drawing.Point(281, 347);
+            this.uxStartChatting.Location = new System.Drawing.Point(288, 347);
             this.uxStartChatting.Name = "uxStartChatting";
             this.uxStartChatting.Size = new System.Drawing.Size(212, 17);
             this.uxStartChatting.TabIndex = 7;
             this.uxStartChatting.Text = "Select User you want to chat with";
+            this.uxStartChatting.Click += new System.EventHandler(this.uxStartChatting_Click);
+            // 
+            // contactsBindingSource1
+            // 
+            this.contactsBindingSource1.DataMember = "Contacts";
+            this.contactsBindingSource1.DataSource = this.userBindingSource;
+            // 
+            // contactsBindingSource2
+            // 
+            this.contactsBindingSource2.DataMember = "Contacts";
+            this.contactsBindingSource2.DataSource = this.userBindingSource;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(Chat_Library.User);
             // 
             // ContactForm
             // 
@@ -131,6 +161,10 @@ namespace Websocket_Client
             this.Controls.Add(this.uxFriendListListBox);
             this.Name = "ContactForm";
             this.Text = "ContactForm";
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +180,9 @@ namespace Websocket_Client
         private System.Windows.Forms.Label uxFriendListLabel;
         private System.Windows.Forms.Button uxStartChatButton;
         private System.Windows.Forms.Label uxStartChatting;
+        private System.Windows.Forms.BindingSource contactsBindingSource;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource contactsBindingSource1;
+        private System.Windows.Forms.BindingSource contactsBindingSource2;
     }
 }

@@ -26,6 +26,7 @@ namespace Websocket_Client
             //SetUp Method
             this.AddToContactDelegate = AddToContactDelegate;
             form = chatform;
+            
         }
         /// <summary>
         /// Return textbox content
@@ -53,12 +54,26 @@ namespace Websocket_Client
                 this.user.Contacts.Add(user);
                 MessageBox.Show("This user has been added to your contact");
             }
+            uxFriendListListBox.DataSource = null;
+            uxFriendListListBox.DataSource = this.user.Contacts;
+
             //Ping Server for change
         }
 
         private void uxStartChatButton_Click(object sender, EventArgs e)
         {
             form.Show();
+        }
+
+        private void uxStartChatting_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uxRemoveFriendButton_Click(object sender, EventArgs e)
+        {
+            //Get the username of selected index
+            //Go through 
         }
     }
 }

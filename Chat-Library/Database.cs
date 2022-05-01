@@ -70,14 +70,20 @@ namespace Chat_Library
 
         public IUser AddtoContact(string username)
         {
-            foreach(User user in UserList)
+            using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             {
-                if (user.UserName.Equals(username))
+                string line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    return user;
+                    if (line.Contains(username))
+                    {
+                        return DeSerializeAccount(line);
+                    }
+                    continue;
                 }
+                //If we don't find any user with given username
+
             }
-            //If we don't find any user with given username
             return null;
         }
 
@@ -91,7 +97,7 @@ namespace Chat_Library
 
         private IUser DeSerializeAccount(string stringUser)
         {
-            IUser user = (IUser)JsonConvert.DeserializeObject(stringUser);
+            IUser user = JsonConvert.DeserializeObject<User>(stringUser);
             return user;
 
         }

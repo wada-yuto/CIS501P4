@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Chat_Library;
+using System.ComponentModel;
 
 namespace Websocket_Server
 {
@@ -40,7 +41,7 @@ namespace Websocket_Server
         /// <summary>
         /// Users contact list all of their friends
         /// </summary>
-        public List<IUser> Contacts { get; set; }
+        public BindingList<IUser> Contacts { get; set; }
 
         public UserProxy(string username,  string password)
         {
@@ -74,7 +75,7 @@ namespace Websocket_Server
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public List<IUser> GetContactList()
+        public BindingList<IUser> GetContactList()
         {
             return this.Contacts;
             

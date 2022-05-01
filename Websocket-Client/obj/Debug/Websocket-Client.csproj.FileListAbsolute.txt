@@ -51,3 +51,5 @@ C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Client\obj\Debug\Webso
 C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Client\obj\Debug\Websocket-Client.pdb
 C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Client\bin\Debug\Newtonsoft.Json.dll
 C:\Users\yuto808263\Desktop\CIS501Chat\CIS501P4\Websocket-Client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yutow\Desktop\CIS501Chat\Websocket-Client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yutow\Desktop\CIS501Chat\Websocket-Client\bin\Debug\Newtonsoft.Json.xml

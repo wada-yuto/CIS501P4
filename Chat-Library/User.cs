@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Chat_Library
 {
@@ -11,7 +12,7 @@ namespace Chat_Library
         private string _username;
         private string _password;
         private string _status;
-        private List<IUser> _contacts;
+        private BindingList<IUser> _contacts = new BindingList<IUser>();
         private int _id;
 
         public string UserName
@@ -27,7 +28,7 @@ namespace Chat_Library
             set { _password = value; }
         }
 
-        public List<IUser> Contacts
+        public BindingList<IUser> Contacts
         {
             get { return _contacts; }
             set { _contacts = value; }
@@ -67,16 +68,21 @@ namespace Chat_Library
         }
 
 
-        public List<IUser> GetContactList()
+        public BindingList<IUser> GetContactList()
         {
             return this.Contacts;
         }
 
         public User(string username, string password)
         {
-            this.UserName = username;
+            this._username = username;
             this.Password = password;
             this.Status = "Online";
+        }
+
+        public override string ToString()
+        {
+            return UserName;
         }
 
     }
