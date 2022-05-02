@@ -25,8 +25,11 @@ namespace Websocket_Server
 
             InitializeComponent();
 
+
             // updates the listboxes of all users in the database
             UpdateUserList(database.UserList);
+            uxOnlineUsersListBox.DataSource = null;
+            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
 
 
@@ -58,7 +61,8 @@ namespace Websocket_Server
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-
+            uxOnlineUsersListBox.DataSource = null;
+            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
     }
 }

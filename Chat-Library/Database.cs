@@ -15,12 +15,12 @@ namespace Chat_Library
         //Make list of all online users
         //Make list of all the chats tha are active
 
-        private string FileName = "C:\\Users\\yuto808263\\Desktop\\CIS501Chat\\CIS501P4\\Chat-Library\\AllUsers.txt;";
+        private string FileName = "..\\..\\..\\Websocket-Client\\bin\\Debug\\AllUsers.txt";
 
         /// <summary>
         /// List of all online users
         /// </summary>
-        public List<User> OnlineUsers = new List<User>();
+        public List<IUser> OnlineUsers = new List<IUser>();
 
         /// <summary>
         /// List of all active chats
@@ -40,6 +40,23 @@ namespace Chat_Library
 
         public Database()
         {
+            using (StreamReader reader = new StreamReader(FileName, true))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+
+                    IUser currentUser = DeSerializeAccount(line);
+                    if (currentUser.GetStatus().Equals("Online"))
+                    {
+                        OnlineUsers.Add(currentUser);
+                    }
+                    else
+                    {
+                        OnlineUsers.Remove(currentUser);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -57,6 +74,8 @@ namespace Chat_Library
             string newUserAdd = SerializeAccount(newUser);
             IUser existingUser = new User(username, password);
             bool exist = false;
+            bool changeStatus = false;
+   
             using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             {
                 string line;
@@ -64,11 +83,18 @@ namespace Chat_Library
                 {
                     if (line.Contains(newUser.UserName))
                     {
+                        changeStatus = true;
                         existingUser = DeSerializeAccount(line);
                         exist = true;
                     }
                     continue;
                 }
+                reader.Close();
+            }
+            if (changeStatus)
+            {
+                existingUser.ChangeStatus("Online");
+                UpdateContact(existingUser);
             }
             if (!exist)
             {
@@ -77,6 +103,7 @@ namespace Chat_Library
                     writer.WriteLine(newUserAdd);
                     return newUser;
                 }
+                
             }
             UserList.Add(newUser);
             //Return new user
@@ -84,8 +111,10 @@ namespace Chat_Library
             
         }
 
-        public void Logout(string username)
+        public void Logout(IUser user)
         {
+            user.ChangeStatus("Offline");
+            UpdateContact(user);
 
         }
 
@@ -103,7 +132,7 @@ namespace Chat_Library
                     continue;
                 }
                 //If we don't find any user with given username
-
+                reader.Close();
             }
             return null;
         }
@@ -123,8 +152,9 @@ namespace Chat_Library
                     continue;
                 }
                 //If we don't find any user with given username
-
+                reader.Close();
             }
+            
             return null;
         }
 
@@ -152,6 +182,7 @@ namespace Chat_Library
                     if (line.Contains(username))
                         return lineNum;
                 }
+                reader.Close();
             }
             return -1;
             //using (StreamReader reader = new StreamReader("AllUsers.txt", true))

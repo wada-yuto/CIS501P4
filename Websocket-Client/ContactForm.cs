@@ -18,9 +18,11 @@ namespace Websocket_Client
         private AddToContactDel AddToContactDelegate;
         private UpdateContactListDel UpdateContactDelegate;
         private RemoveContactDel RemoveContactDelegate;
+        private LogoutDel LogoutDelegate;
         private string username;
         private ChatForm form;
-        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate, RemoveContactDel RemoveContactDelegate)
+        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate, 
+            RemoveContactDel RemoveContactDelegate, LogoutDel LogoutDelegate)
         {
             this.user = user;
             InitializeComponent();
@@ -29,8 +31,10 @@ namespace Websocket_Client
             this.AddToContactDelegate = AddToContactDelegate;
             this.UpdateContactDelegate = UpdateContactDelegate;
             this.RemoveContactDelegate = RemoveContactDelegate;
+            this.LogoutDelegate = LogoutDelegate;
             uxFriendListListBox.DataSource = null;
             uxFriendListListBox.DataSource = user.Contacts;
+            
             form = chatform;
             
         }
@@ -119,6 +123,13 @@ namespace Websocket_Client
             uxFriendListListBox.DataSource = this.user.Contacts;
 
             //Ping Server for change
+        }
+
+        private void uxLogoutButton_Click(object sender, EventArgs e)
+        {
+            IUser logoutUser = this.user;
+            LogoutDelegate(logoutUser);
+            this.Close();
         }
     }
 }

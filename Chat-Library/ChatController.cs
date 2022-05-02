@@ -75,6 +75,12 @@ namespace Websocket_Client_Chat
             return user;
         }
 
+        public void LogoutLogic(IUser user)
+        {
+            DatabaseProxy database = new DatabaseProxy();
+            database.Logout(user);
+        }
+
         // Makes sure to close the websocket when the controller is destructed
         ~ChatController()
         {

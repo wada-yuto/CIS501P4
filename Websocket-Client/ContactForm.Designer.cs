@@ -32,6 +32,7 @@ namespace Websocket_Client
             this.components = new System.ComponentModel.Container();
             this.uxFriendListListBox = new System.Windows.Forms.ListBox();
             this.contactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uxRemoveFriendButton = new System.Windows.Forms.Button();
             this.uxContactAddLabel = new System.Windows.Forms.Label();
             this.uxAddContactUsernameTextBox = new System.Windows.Forms.TextBox();
@@ -41,11 +42,11 @@ namespace Websocket_Client
             this.uxStartChatting = new System.Windows.Forms.Label();
             this.contactsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uxLogoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uxFriendListListBox
@@ -61,10 +62,14 @@ namespace Websocket_Client
             this.contactsBindingSource.DataMember = "Contacts";
             this.contactsBindingSource.DataSource = this.userBindingSource;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(Chat_Library.User);
+            // 
             // uxRemoveFriendButton
             // 
             this.uxRemoveFriendButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxRemoveFriendButton.Location = new System.Drawing.Point(284, 59);
+            this.uxRemoveFriendButton.Location = new System.Drawing.Point(284, 49);
             this.uxRemoveFriendButton.Name = "uxRemoveFriendButton";
             this.uxRemoveFriendButton.Size = new System.Drawing.Size(251, 37);
             this.uxRemoveFriendButton.TabIndex = 1;
@@ -76,7 +81,7 @@ namespace Websocket_Client
             // 
             this.uxContactAddLabel.AutoSize = true;
             this.uxContactAddLabel.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxContactAddLabel.Location = new System.Drawing.Point(281, 122);
+            this.uxContactAddLabel.Location = new System.Drawing.Point(281, 164);
             this.uxContactAddLabel.Name = "uxContactAddLabel";
             this.uxContactAddLabel.Size = new System.Drawing.Size(258, 17);
             this.uxContactAddLabel.TabIndex = 2;
@@ -84,7 +89,7 @@ namespace Websocket_Client
             // 
             // uxAddContactUsernameTextBox
             // 
-            this.uxAddContactUsernameTextBox.Location = new System.Drawing.Point(284, 142);
+            this.uxAddContactUsernameTextBox.Location = new System.Drawing.Point(284, 184);
             this.uxAddContactUsernameTextBox.Name = "uxAddContactUsernameTextBox";
             this.uxAddContactUsernameTextBox.Size = new System.Drawing.Size(251, 20);
             this.uxAddContactUsernameTextBox.TabIndex = 3;
@@ -92,7 +97,7 @@ namespace Websocket_Client
             // uxAddFriendButton
             // 
             this.uxAddFriendButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxAddFriendButton.Location = new System.Drawing.Point(284, 168);
+            this.uxAddFriendButton.Location = new System.Drawing.Point(284, 210);
             this.uxAddFriendButton.Name = "uxAddFriendButton";
             this.uxAddFriendButton.Size = new System.Drawing.Size(255, 37);
             this.uxAddFriendButton.TabIndex = 4;
@@ -113,7 +118,7 @@ namespace Websocket_Client
             // uxStartChatButton
             // 
             this.uxStartChatButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStartChatButton.Location = new System.Drawing.Point(284, 367);
+            this.uxStartChatButton.Location = new System.Drawing.Point(284, 294);
             this.uxStartChatButton.Name = "uxStartChatButton";
             this.uxStartChatButton.Size = new System.Drawing.Size(255, 37);
             this.uxStartChatButton.TabIndex = 6;
@@ -125,7 +130,7 @@ namespace Websocket_Client
             // 
             this.uxStartChatting.AutoSize = true;
             this.uxStartChatting.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxStartChatting.Location = new System.Drawing.Point(288, 347);
+            this.uxStartChatting.Location = new System.Drawing.Point(284, 274);
             this.uxStartChatting.Name = "uxStartChatting";
             this.uxStartChatting.Size = new System.Drawing.Size(212, 17);
             this.uxStartChatting.TabIndex = 7;
@@ -142,15 +147,23 @@ namespace Websocket_Client
             this.contactsBindingSource2.DataMember = "Contacts";
             this.contactsBindingSource2.DataSource = this.userBindingSource;
             // 
-            // userBindingSource
+            // uxLogoutButton
             // 
-            this.userBindingSource.DataSource = typeof(Chat_Library.User);
+            this.uxLogoutButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold);
+            this.uxLogoutButton.Location = new System.Drawing.Point(284, 367);
+            this.uxLogoutButton.Name = "uxLogoutButton";
+            this.uxLogoutButton.Size = new System.Drawing.Size(255, 37);
+            this.uxLogoutButton.TabIndex = 8;
+            this.uxLogoutButton.Text = "Logout";
+            this.uxLogoutButton.UseVisualStyleBackColor = true;
+            this.uxLogoutButton.Click += new System.EventHandler(this.uxLogoutButton_Click);
             // 
             // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 424);
+            this.Controls.Add(this.uxLogoutButton);
             this.Controls.Add(this.uxStartChatting);
             this.Controls.Add(this.uxStartChatButton);
             this.Controls.Add(this.uxFriendListLabel);
@@ -162,9 +175,9 @@ namespace Websocket_Client
             this.Name = "ContactForm";
             this.Text = "ContactForm";
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +197,6 @@ namespace Websocket_Client
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource contactsBindingSource1;
         private System.Windows.Forms.BindingSource contactsBindingSource2;
+        private System.Windows.Forms.Button uxLogoutButton;
     }
 }

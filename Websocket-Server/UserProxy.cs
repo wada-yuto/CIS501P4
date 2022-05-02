@@ -70,9 +70,9 @@ namespace Websocket_Server
             throw new NotImplementedException();
         }
 
-
-
-
-
+        public void ChangeStatus(string status)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

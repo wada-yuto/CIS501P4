@@ -21,6 +21,8 @@ namespace Chat_Library
 
         int GetServerID();
 
+        void ChangeStatus(string status);
+
         BindingList<User> GetContactList();
 
 

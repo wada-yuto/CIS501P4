@@ -69,6 +69,11 @@ namespace Websocket_Server
             return this.ServerID;
         }
 
+        public void ChangeStatus(string status)
+        {
+            this.Status = status;
+        }
+
 
         /// <summary>
         /// 

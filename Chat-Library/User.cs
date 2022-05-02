@@ -67,6 +67,11 @@ namespace Chat_Library
             return this.ServerID;
         }
 
+        public void ChangeStatus(string status)
+        {
+            Status = status;
+        }
+
 
         public BindingList<User> GetContactList()
         {

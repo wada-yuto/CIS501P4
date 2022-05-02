@@ -67,6 +67,15 @@ namespace Chat_Library
             return database.RemoveContact(username);
         }
 
+        public void Logout(IUser user)
+        {
+            if (database == null)
+            {
+                database = new Database();
+            }
+            database.Logout(user);
+        }
+
         public void GetAllOnlineAccounts()
         {
             //Need to implement the code
