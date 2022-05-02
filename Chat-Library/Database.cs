@@ -27,7 +27,7 @@ namespace Chat_Library
         /// </summary>
         public List<List<User>> ActiveChats = new List<List<User>>();
 
-        public Dictionary<string, string> AllUsers = new Dictionary<string, string>();
+        public List<User> AdminUsers = new List<User>();
 
         //Stores all users as IUser instead of key value pair
         public List<IUser> UserList = new List<IUser>();
@@ -51,8 +51,7 @@ namespace Chat_Library
         public IUser Login(string username, string password)
         {
 
-            //Add user that is not in the dictionary
-            AllUsers.Add(username, password);
+           
             //Create new user
             User newUser = new User(username, password);
             string newUserAdd = SerializeAccount(newUser);
@@ -198,16 +197,18 @@ namespace Chat_Library
 
         }
 
-        public void GetUsersFromFile(string fileName)
+        public void GetUsersFromFile()
         {
             // need to deserialize the object in the text file
             // add it to the list of users 
             // return the list of all users in the text file
             List<IUser> users = new List<IUser>();
-            using(StreamReader sr = new StreamReader(fileName))
+            using(StreamReader sr = new StreamReader("C:/Users/tucke/Desktop/New folder/Websocket-Client/bin/Debug/AllUsers.txt"))
             {
                 while (!sr.EndOfStream)
                 {
+                    IUser user = DeSerializeAccount(sr.ReadLine());
+                    users.Add(user);
                     // need to deserialize the object in the text file
                     // add it to the list of users 
                     // return the list of all users in the text file

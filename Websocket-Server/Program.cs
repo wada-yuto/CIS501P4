@@ -26,35 +26,12 @@ namespace Websocket_Server
             // Add the Chat websocket service
             wss.AddWebSocketService<Chat>("/chat");
 
-            while (serverStatus == false)
-            {
-                Console.WriteLine("Enter Admin Username: ");
-                string tempAdminUser = Console.ReadLine();
+            AdminLogin adminlogin = new AdminLogin();
 
-                foreach (string s in adminCredentials.Keys)
-                {
-                    if (s.Equals(tempAdminUser))
-                    {
-                        Console.WriteLine("Enter Admin Password: ");
-                        string tempAdminPass = Console.ReadLine();
-                        foreach (string t in adminCredentials.Values)
-                        {
-                            if (t.Equals(tempAdminPass))
-                            {
-                                serverStatus = true;
 
-                                // Start the server
-                                wss.Start();
-                            }
-                        }
-                    }
-                }
-            }
-
-            AdminPanel form = new AdminPanel();
-
+            wss.Start();
             Console.WriteLine("\n Server Is Online");
-            Application.Run(form);
+            Application.Run(adminlogin);
             Console.WriteLine("Press Enter to exit.");
             Console.ReadLine();
 
