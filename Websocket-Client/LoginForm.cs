@@ -14,6 +14,7 @@ namespace Websocket_Client
     public delegate IUser CheckDatabaseDel(string username, string password);
     public delegate User AddToContactDel(string username);
     public delegate void UpdateContactListDel(IUser user);
+    public delegate User RemoveContactDel(string user);
     public partial class LoginForm : Form
     {
         //Need to check the database for the username -> Open the contact form
@@ -25,6 +26,7 @@ namespace Websocket_Client
         private CheckDatabaseDel CheckDatabaseDelegate;
         private AddToContactDel AddToContactDelegate;
         private UpdateContactListDel UpdateContactListDelegate;
+        private RemoveContactDel RemoveContactDelegate;
 
         private ChatForm form;
 
@@ -32,14 +34,15 @@ namespace Websocket_Client
         {
             InitializeComponent();
             this.form = form;
-
         }
 
-        public void SetUp(CheckDatabaseDel CheckDatabaseDelegate, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactListDelegate)
+        public void SetUp(CheckDatabaseDel CheckDatabaseDelegate, AddToContactDel AddToContactDelegate, 
+            UpdateContactListDel UpdateContactListDelegate, RemoveContactDel RemoveContactDelegate)
         {
             this.CheckDatabaseDelegate = CheckDatabaseDelegate;
             this.AddToContactDelegate = AddToContactDelegate;
             this.UpdateContactListDelegate = UpdateContactListDelegate;
+            this.RemoveContactDelegate = RemoveContactDelegate;
         }
 
         private string GetUsername()
@@ -62,7 +65,7 @@ namespace Websocket_Client
             username = GetUsername();
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
-            ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate,UpdateContactListDelegate);
+            ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate,UpdateContactListDelegate,RemoveContactDelegate);
             contactForm.Show();
 
 

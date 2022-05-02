@@ -17,9 +17,10 @@ namespace Websocket_Client
         private User user;
         private AddToContactDel AddToContactDelegate;
         private UpdateContactListDel UpdateContactDelegate;
+        private RemoveContactDel RemoveContactDelegate;
         private string username;
         private ChatForm form;
-        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate)
+        public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate, RemoveContactDel RemoveContactDelegate)
         {
             this.user = user;
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Websocket_Client
             //SetUp Method
             this.AddToContactDelegate = AddToContactDelegate;
             this.UpdateContactDelegate = UpdateContactDelegate;
+            this.RemoveContactDelegate = RemoveContactDelegate;
             uxFriendListListBox.DataSource = null;
             uxFriendListListBox.DataSource = user.Contacts;
             form = chatform;
@@ -54,7 +56,9 @@ namespace Websocket_Client
             }
             else
             {
+                MessageBox.Show(user.Contacts.Count.ToString());
                 this.user.Contacts.Add(user);
+                MessageBox.Show(user.Contacts.Count.ToString());
                 MessageBox.Show("This user has been added to your contact");
             }
             UpdateContactDelegate(this.user);
@@ -76,8 +80,45 @@ namespace Websocket_Client
 
         private void uxRemoveFriendButton_Click(object sender, EventArgs e)
         {
-            //Get the username of selected index
-            //Go through 
+            //Get username that they want to add
+            string SelectedUser = uxFriendListListBox.SelectedItem.ToString();
+            //Check to see if this return null, if not null, add to the contact list
+            User userToRemove = RemoveContactDelegate(SelectedUser);
+            if (userToRemove == null)
+            {
+                MessageBox.Show("This user does not exist");
+                uxAddContactUsernameTextBox.Clear();
+            }
+            else
+            {
+                //MessageBox.Show(user.Contacts.Count.ToString());
+                //this.user.Contacts.Remove(userToRemove);
+                //foreach(User currentUser in this.user.Contacts)
+                //{
+                //    if (currentUser.UserName == userToRemove.UserName)
+                //    {
+                //        this.user.Contacts.Remove(currentUser);
+                //    }
+                //    continue;
+                //}
+
+                for(int i = 0; i < this.user.Contacts.Count; i++)
+                {
+                    if(this.user.Contacts[i].UserName == userToRemove.UserName)
+                    {
+                        this.user.Contacts.Remove(this.user.Contacts[i]);
+                    }
+                    continue;
+                }
+                MessageBox.Show(user.Contacts.Count.ToString());
+                
+                MessageBox.Show("This user has been removed from your contact list");
+            }
+            UpdateContactDelegate(this.user);
+            uxFriendListListBox.DataSource = null;
+            uxFriendListListBox.DataSource = this.user.Contacts;
+
+            //Ping Server for change
         }
     }
 }

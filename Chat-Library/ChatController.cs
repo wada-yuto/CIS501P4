@@ -68,6 +68,13 @@ namespace Websocket_Client_Chat
             return user;          
         }
 
+        public User RemoveContactListLogic(string username)
+        {
+            DatabaseProxy database = new DatabaseProxy();
+            User user = database.RemoveContact(username);
+            return user;
+        }
+
         // Makes sure to close the websocket when the controller is destructed
         ~ChatController()
         {

@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+
 
 namespace Chat_Library
 {
@@ -96,6 +98,26 @@ namespace Chat_Library
                 while ((line = reader.ReadLine()) != null)
                 {
                     if (line.Contains(username))
+                    {
+                        return DeSerializeAccount(line);
+                    }
+                    continue;
+                }
+                //If we don't find any user with given username
+
+            }
+            return null;
+        }
+
+        public User RemoveContact(string username)
+        {
+            using (StreamReader reader = new StreamReader("AllUsers.txt", true))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    dynamic data = JObject.Parse(line);
+                    if (data.UserName == username)
                     {
                         return DeSerializeAccount(line);
                     }

@@ -58,6 +58,15 @@ namespace Chat_Library
             database.UpdateContact(user);
         }
 
+        public User RemoveContact(string username)
+        {
+            if (database == null)
+            {
+                database = new Database();
+            }
+            return database.RemoveContact(username);
+        }
+
         public void GetAllOnlineAccounts()
         {
             //Need to implement the code
