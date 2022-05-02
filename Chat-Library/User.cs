@@ -12,7 +12,7 @@ namespace Chat_Library
         private string _username;
         private string _password;
         private string _status;
-        private BindingList<IUser> _contacts = new BindingList<IUser>();
+        private BindingList<User> _contacts = new BindingList<User>();
         private int _id;
 
         public string UserName
@@ -28,7 +28,7 @@ namespace Chat_Library
             set { _password = value; }
         }
 
-        public BindingList<IUser> Contacts
+        public BindingList<User> Contacts
         {
             get { return _contacts; }
             set { _contacts = value; }
@@ -68,7 +68,7 @@ namespace Chat_Library
         }
 
 
-        public BindingList<IUser> GetContactList()
+        public BindingList<User> GetContactList()
         {
             return this.Contacts;
         }

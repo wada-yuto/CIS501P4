@@ -27,6 +27,8 @@ namespace Websocket_Client
             //SetUp Method
             this.AddToContactDelegate = AddToContactDelegate;
             this.UpdateContactDelegate = UpdateContactDelegate;
+            uxFriendListListBox.DataSource = null;
+            uxFriendListListBox.DataSource = user.Contacts;
             form = chatform;
             
         }
@@ -44,7 +46,7 @@ namespace Websocket_Client
             //Get username that they want to add
             username = GetFriendName();
             //Check to see if this return null, if not null, add to the contact list
-            IUser user = AddToContactDelegate(username);
+            User user = AddToContactDelegate(username);
             if (user == null)
             {
                 MessageBox.Show("This user does not exist");

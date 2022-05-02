@@ -61,10 +61,10 @@ namespace Websocket_Client_Chat
             
         }
 
-        public IUser AddToContactListLogic(string username)
+        public User AddToContactListLogic(string username)
         {
             DatabaseProxy database = new DatabaseProxy();
-            IUser user = database.AddToContact(username);
+            User user = database.AddToContact(username);
             return user;          
         }
 

@@ -30,30 +30,31 @@ namespace Chat_Library
         //Stores all users as IUser instead of key value pair
         public List<IUser> UserList = new List<IUser>();
 
+        JsonSerializerSettings Settings = new JsonSerializerSettings
+        {
+            ContractResolver = new CustomJsonContractResolver(),
+            PreserveReferencesHandling = PreserveReferencesHandling.Objects
+        };
+
         public Database()
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public IUser Login(string username, string password)
         {
-            foreach (KeyValuePair<String, string> pair in AllUsers)
-            {
-                if (pair.Key.Equals(username))
-                {
-                    if (pair.Value.Equals(password))
-                    {
-                        User user = new User(username, password);
-                        UserList.Add(user);
-                        //Return existing user
-                        return user;
-                    }
-                }
-            }
 
             //Add user that is not in the dictionary
             AllUsers.Add(username, password);
+            //Create new user
             User newUser = new User(username, password);
-            string user2 = SerializeAccount(newUser);
+            string newUserAdd = SerializeAccount(newUser);
+            IUser existingUser = new User(username, password);
             bool exist = false;
             using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             {
@@ -62,6 +63,7 @@ namespace Chat_Library
                 {
                     if (line.Contains(newUser.UserName))
                     {
+                        existingUser = DeSerializeAccount(line);
                         exist = true;
                     }
                     continue;
@@ -71,12 +73,14 @@ namespace Chat_Library
             {
                 using (StreamWriter writer = new StreamWriter("AllUsers.txt", true))
                 {
-                    writer.WriteLine(user2);
+                    writer.WriteLine(newUserAdd);
+                    return newUser;
                 }
             }
             UserList.Add(newUser);
             //Return new user
-            return newUser;
+            return existingUser;
+            
         }
 
         public void Logout(string username)
@@ -84,7 +88,7 @@ namespace Chat_Library
 
         }
 
-        public IUser AddtoContact(string username)
+        public User AddtoContact(string username)
         {
             using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             {
@@ -129,8 +133,6 @@ namespace Chat_Library
                 }
             }
             return -1;
-
-
             //using (StreamReader reader = new StreamReader("AllUsers.txt", true))
             //{
             //    string line;
@@ -156,16 +158,18 @@ namespace Chat_Library
 
         private string SerializeAccount(IUser user)
         {
-            string jsonString = JsonConvert.SerializeObject(user);
+            string jsonString = JsonConvert.SerializeObject(user,Settings);
             return jsonString;
         }
 
-        private IUser DeSerializeAccount(string stringUser)
+        private User DeSerializeAccount(string stringUser)
         {
-            IUser user = JsonConvert.DeserializeObject<User>(stringUser);
+            var user = JsonConvert.DeserializeObject<User>(stringUser);
             return user;
 
         }
+
+        
 
         public void GetAllOnlineAccounts()
         {

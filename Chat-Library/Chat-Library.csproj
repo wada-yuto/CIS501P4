@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatController.cs" />
+    <Compile Include="CustomJsonContractResolver.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseProxy.cs" />
     <Compile Include="IDatabase.cs" />

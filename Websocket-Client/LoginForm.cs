@@ -12,7 +12,7 @@ using Chat_Library;
 namespace Websocket_Client
 {
     public delegate IUser CheckDatabaseDel(string username, string password);
-    public delegate IUser AddToContactDel(string username);
+    public delegate User AddToContactDel(string username);
     public delegate void UpdateContactListDel(IUser user);
     public partial class LoginForm : Form
     {

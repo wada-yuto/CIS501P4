@@ -41,7 +41,7 @@ namespace Websocket_Server
         /// <summary>
         /// Users contact list all of their friends
         /// </summary>
-        public BindingList<IUser> Contacts { get; set; }
+        public BindingList<User> Contacts { get; set; }
 
         public UserProxy(string username,  string password)
         {
@@ -75,7 +75,7 @@ namespace Websocket_Server
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public BindingList<IUser> GetContactList()
+        public BindingList<User> GetContactList()
         {
             return this.Contacts;
             

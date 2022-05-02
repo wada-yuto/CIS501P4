@@ -13,7 +13,6 @@ namespace Chat_Library
     public interface IUser
     {
 
-
         string GetUsername();
 
         string GetPassword();
@@ -22,7 +21,7 @@ namespace Chat_Library
 
         int GetServerID();
 
-        BindingList<IUser> GetContactList();
+        BindingList<User> GetContactList();
 
 
     }

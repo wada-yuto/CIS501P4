@@ -38,7 +38,7 @@ namespace Chat_Library
             //return database.Login(username);
         }
 
-        public IUser AddToContact(string username)
+        public User AddToContact(string username)
         {
             //Need to implement the code
 

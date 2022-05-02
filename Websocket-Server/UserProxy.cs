@@ -65,7 +65,7 @@ namespace Websocket_Server
             throw new NotImplementedException();
         }
 
-        BindingList<IUser> IUser.GetContactList()
+        BindingList<User> IUser.GetContactList()
         {
             throw new NotImplementedException();
         }
