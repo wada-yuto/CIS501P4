@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace Websocket_Server
 {
+    public delegate void UpdateOnlineUserListDel(List<IUser> activeUsers);
     public partial class AdminLogin : Form
     {
+        private UpdateOnlineUserListDel UpdateOnlineUserListDelegate;
         private string username;
         private string password;
         private Database database = new Database();
@@ -32,6 +34,8 @@ namespace Websocket_Server
         {
             return uxPasswordTextBox.Text;
         }
+
+        
 
         
 

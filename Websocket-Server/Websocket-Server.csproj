@@ -60,7 +60,7 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chat.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Echo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

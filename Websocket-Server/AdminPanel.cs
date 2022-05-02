@@ -27,7 +27,7 @@ namespace Websocket_Server
 
 
             // updates the listboxes of all users in the database
-            UpdateUserList(database.UserList);
+            UpdateOnlineUserList(database.UserList);
             uxOnlineUsersListBox.DataSource = null;
             uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
@@ -38,7 +38,7 @@ namespace Websocket_Server
         /// depending on the status of the users
         /// </summary>
         /// <param name="activeUsers">List of all users in the database</param>
-        public void UpdateUserList(List<IUser> activeUsers)
+        public void UpdateOnlineUserList(List<IUser> activeUsers)
         {
             foreach(IUser user in activeUsers)
             {
@@ -52,6 +52,8 @@ namespace Websocket_Server
                     uxAllUsersListBox.Items.Add(user.GetUsername());
                 }
             }
+            uxOnlineUsersListBox.DataSource = null;
+            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
 
         public void UpdateChatList(List<IUser> ActiveChats)

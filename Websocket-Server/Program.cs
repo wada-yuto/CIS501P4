@@ -24,7 +24,7 @@ namespace Websocket_Server
             wss.AddWebSocketService<Echo>("/echo");
 
             // Add the Chat websocket service
-            wss.AddWebSocketService<Chat>("/chat");
+            wss.AddWebSocketService<Server>("/chat");
 
             AdminLogin adminlogin = new AdminLogin();
 

@@ -15,8 +15,10 @@ namespace Websocket_Server
     // Task II: Add timestamp (just the hour and minute) to the messages
     //          (see http://stackoverflow.com/questions/21219797/how-to-get-correct-timestamp-in-c-sharp
     //           for an example on how to get a timestamp).
-    class Chat : WebSocketBehavior
+    
+    public class Server : WebSocketBehavior
     {
+        private UpdateOnlineUserListDel UpdateOnlineUserListDelegate;
         public static List<string> history = new List<string>();
         private static int count;
 
