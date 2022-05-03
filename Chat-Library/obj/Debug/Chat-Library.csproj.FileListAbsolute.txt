@@ -42,3 +42,14 @@ C:\Users\tucke\Desktop\New folder (3)\Chat-Library\obj\Debug\Chat-Library.csproj
 C:\Users\tucke\Desktop\New folder (3)\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
 C:\Users\tucke\Desktop\New folder (3)\Chat-Library\obj\Debug\Chat-Library.dll
 C:\Users\tucke\Desktop\New folder (3)\Chat-Library\obj\Debug\Chat-Library.pdb
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\Chat-Library.dll
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\Chat-Library.pdb
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\websocket-sharp.dll
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\bin\Debug\websocket-sharp.xml
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\obj\Debug\Chat-Library.csproj.AssemblyReference.cache
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\obj\Debug\Chat-Library.csproj.CoreCompileInputs.cache
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\obj\Debug\Chat-Library.dll
+C:\Users\tucke\Desktop\FinalP4\Chat-Library\obj\Debug\Chat-Library.pdb

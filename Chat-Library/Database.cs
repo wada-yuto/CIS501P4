@@ -228,24 +228,30 @@ namespace Chat_Library
 
         }
 
-        public void GetUsersFromFile()
+        public List<IUser> GetUsersFromFile()
         {
             // need to deserialize the object in the text file
             // add it to the list of users 
             // return the list of all users in the text file
             List<IUser> users = new List<IUser>();
-            using(StreamReader sr = new StreamReader("C:/Users/tucke/Desktop/New folder/Websocket-Client/bin/Debug/AllUsers.txt"))
+            using (StreamReader sr = new StreamReader("C:/Users/tucke/Desktop/New folder/Websocket-Client/bin/Debug/AllUsers.txt"))
             {
                 while (!sr.EndOfStream)
                 {
                     IUser user = DeSerializeAccount(sr.ReadLine());
                     users.Add(user);
+                    if (user.GetStatus().Equals("Online"))
+                    {
+                        OnlineUsers.Add(user);
+                    }
+                    UserList.Add(user);
                     // need to deserialize the object in the text file
                     // add it to the list of users 
                     // return the list of all users in the text file
                     // need to change the return type of this methode back to List<IUser>
                 }
             }
+            return users;
         }
     }
 }

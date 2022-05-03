@@ -13,31 +13,13 @@ namespace Websocket_Server
     {
         static void Main(string[] args)
         {
-            bool serverStatus = false;
-            Dictionary<String, String> adminCredentials = new Dictionary<string, string>();
-            adminCredentials.Add("admin", "password");
-
-            // Start a websocket server at port 8001
-            var wss = new WebSocketServer(8001);
-
-            // Add the Echo websocket service
-            wss.AddWebSocketService<Echo>("/echo");
-
-            // Add the Chat websocket service
-            wss.AddWebSocketService<Server>("/chat");
 
             AdminLogin adminlogin = new AdminLogin();
 
-
-            wss.Start();
-            Console.WriteLine("\n Server Is Online");
             Application.Run(adminlogin);
             Console.WriteLine("Press Enter to exit.");
             Console.ReadLine();
 
-
-            // Stop the server
-            wss.Stop();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebSocketSharp.Server;
 
 namespace Websocket_Server
 {
@@ -18,10 +19,22 @@ namespace Websocket_Server
         private string username;
         private string password;
         private Database database = new Database();
+        private bool serverstatus = false;
+
+        private WebSocketServer wss;
         public AdminLogin()
         {
             //hard coded admin
             database.AdminUsers.Add(new User("admin", "password"));
+
+            wss = new WebSocketServer(8001);
+
+            // Add the Echo websocket service
+            wss.AddWebSocketService<Echo>("/echo");
+
+            // Add the Chat websocket service
+            wss.AddWebSocketService<Server>("/chat");
+
             InitializeComponent();
         }
 
@@ -35,10 +48,6 @@ namespace Websocket_Server
             return uxPasswordTextBox.Text;
         }
 
-        
-
-        
-
         private void uxLoginButton_Click(object sender, EventArgs e)
         {
             username = GetUsername();
@@ -49,6 +58,8 @@ namespace Websocket_Server
                 {
                     if (user.GetPassword().Equals(password))
                     {
+                        wss.Start();
+                        Console.WriteLine("Server started on port " + wss.Port);
                         new AdminPanel().Show();
                     }
                     else
@@ -66,6 +77,7 @@ namespace Websocket_Server
         private void uxCancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            wss.Stop();
         }
     }
 }

@@ -14,22 +14,13 @@ namespace Websocket_Server
     public partial class AdminPanel : Form
     {
         Database database = new Database();
-        
+        List<IUser> users = new List<IUser>();
         public AdminPanel()
         {
-            // dummy users to test admin panel is adding them to correct listbox
-            IUser v = new User("User1", "password1");
-            database.UserList.Add(v);
-            v = new User("USer2", "password2");
-            database.UserList.Add(v);
-
+            users = database.GetUsersFromFile();
             InitializeComponent();
-
-
             // updates the listboxes of all users in the database
-            UpdateOnlineUserList(database.UserList);
-            uxOnlineUsersListBox.DataSource = null;
-            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
+            UpdateUserList();
         }
 
 
@@ -38,20 +29,13 @@ namespace Websocket_Server
         /// depending on the status of the users
         /// </summary>
         /// <param name="activeUsers">List of all users in the database</param>
-        public void UpdateOnlineUserList(List<IUser> activeUsers)
+        public void UpdateUserList()
         {
-            foreach(IUser user in activeUsers)
-            {
-                if(user.GetStatus().Equals("Online"))
-                {
-                    uxOnlineUsersListBox.Items.Add(user.GetUsername());
-                    uxAllUsersListBox.Items.Add(user.GetUsername());
-                }
-                else
-                {
-                    uxAllUsersListBox.Items.Add(user.GetUsername());
-                }
-            }
+            // updates the listboxes of all users in the database
+            uxAllUsersListBox.DataSource = null;
+            uxAllUsersListBox.DataSource = users;
+
+            // updates the list box of all online users
             uxOnlineUsersListBox.DataSource = null;
             uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
@@ -63,8 +47,7 @@ namespace Websocket_Server
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            uxOnlineUsersListBox.DataSource = null;
-            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
+
         }
     }
 }
