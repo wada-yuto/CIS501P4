@@ -70,7 +70,7 @@ namespace Websocket_Client
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
             ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate,UpdateContactListDelegate,
-                RemoveContactDelegate,LogoutDelegate);
+            RemoveContactDelegate,LogoutDelegate);
             contactForm.Show();
 
 

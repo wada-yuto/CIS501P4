@@ -48,5 +48,10 @@ namespace Websocket_Client
 
             return true;
         }
+
+        private void ChatForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
