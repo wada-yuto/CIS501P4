@@ -40,23 +40,23 @@ namespace Chat_Library
 
         public Database()
         {
-            using (StreamReader reader = new StreamReader(FileName, true))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
+            //using (StreamReader reader = new StreamReader(FileName, true))
+            //{
+            //    string line;
+            //    while ((line = reader.ReadLine()) != null)
+            //    {
 
-                    IUser currentUser = DeSerializeAccount(line);
-                    if (currentUser.GetStatus().Equals("Online"))
-                    {
-                        OnlineUsers.Add(currentUser);
-                    }
-                    else
-                    {
-                        OnlineUsers.Remove(currentUser);
-                    }
-                }
-            }
+            //        IUser currentUser = DeSerializeAccount(line);
+            //        if (currentUser.GetStatus().Equals("Online"))
+            //        {
+            //            OnlineUsers.Add(currentUser);
+            //        }
+            //        else
+            //        {
+            //            OnlineUsers.Remove(currentUser);
+            //        }
+            //    }
+            //}
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Chat_Library
             // add it to the list of users 
             // return the list of all users in the text file
             List<IUser> users = new List<IUser>();
-            using (StreamReader sr = new StreamReader("C:/Users/tucke/Desktop/New folder/Websocket-Client/bin/Debug/AllUsers.txt"))
+            using (StreamReader sr = new StreamReader(FileName, true))
             {
                 while (!sr.EndOfStream)
                 {
@@ -243,6 +243,10 @@ namespace Chat_Library
                     if (user.GetStatus().Equals("Online"))
                     {
                         OnlineUsers.Add(user);
+                    }
+                    else
+                    {
+                        OnlineUsers.Remove(user);
                     }
                     UserList.Add(user);
                     // need to deserialize the object in the text file

@@ -40,6 +40,18 @@ namespace Websocket_Server
             uxOnlineUsersListBox.DataSource = database.OnlineUsers;
         }
 
+        public void UpdateOnlineUserList(List<IUser> activeUsers)
+        {
+            if (uxOnlineUsersListBox.InvokeRequired)
+            {
+                uxOnlineUsersListBox.Invoke(new MethodInvoker(delegate { uxOnlineUsersListBox.DataSource = activeUsers; }));
+            }
+            else
+            {
+                uxOnlineUsersListBox.DataSource = activeUsers;
+                uxOnlineUsersListBox.Update();
+            }
+        }
         public void UpdateChatList(List<IUser> ActiveChats)
         {
 

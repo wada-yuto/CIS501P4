@@ -15,12 +15,19 @@ namespace Websocket_Server
     // Task II: Add timestamp (just the hour and minute) to the messages
     //          (see http://stackoverflow.com/questions/21219797/how-to-get-correct-timestamp-in-c-sharp
     //           for an example on how to get a timestamp).
-    
+
+    public delegate void UpdateOnlineUserListDel(List<IUser> activeUsers);
     public class Server : WebSocketBehavior
     {
         private UpdateOnlineUserListDel UpdateOnlineUserListDelegate;
         public static List<string> history = new List<string>();
         private static int count;
+        private Database database = new Database();
+
+        public void SetUp(UpdateOnlineUserListDel UpdateOnlineUserListDelegate)
+        {
+            this.UpdateOnlineUserListDelegate = UpdateOnlineUserListDelegate;
+        }
 
         public void UpdateUserList(List<IUser> ActiveUsers)
         {
@@ -40,6 +47,7 @@ namespace Websocket_Server
 
         protected override void OnOpen()
         {
+            //UpdateOnlineUserListDelegate(database.OnlineUsers);
             count = 0;
             foreach(string message in history)
             {

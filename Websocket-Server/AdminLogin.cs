@@ -12,7 +12,7 @@ using WebSocketSharp.Server;
 
 namespace Websocket_Server
 {
-    public delegate void UpdateOnlineUserListDel(List<IUser> activeUsers);
+   
     public partial class AdminLogin : Form
     {
         private UpdateOnlineUserListDel UpdateOnlineUserListDelegate;
@@ -24,16 +24,20 @@ namespace Websocket_Server
         private WebSocketServer wss;
         public AdminLogin()
         {
-            //hard coded admin
+            //Server serv = new Server();
+            //AdminPanel adminPanel = new AdminPanel();
+            //serv.SetUp(adminPanel.UpdateOnlineUserList);
+            
+            ////hard coded admin
             database.AdminUsers.Add(new User("admin", "password"));
 
-            wss = new WebSocketServer(8001);
+            //wss = new WebSocketServer(8001);
 
-            // Add the Echo websocket service
-            wss.AddWebSocketService<Echo>("/echo");
+            //// Add the Echo websocket service
+            //wss.AddWebSocketService<Echo>("/echo");
 
-            // Add the Chat websocket service
-            wss.AddWebSocketService<Server>("/chat");
+            //// Add the Chat websocket service
+            //wss.AddWebSocketService<Server>("/chat");
 
             InitializeComponent();
         }
@@ -58,8 +62,8 @@ namespace Websocket_Server
                 {
                     if (user.GetPassword().Equals(password))
                     {
-                        wss.Start();
-                        Console.WriteLine("Server started on port " + wss.Port);
+                        //wss.Start();
+                        //Console.WriteLine("Server started on port " + wss.Port);
                         new AdminPanel().Show();
                     }
                     else
