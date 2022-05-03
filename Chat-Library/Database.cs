@@ -81,7 +81,8 @@ namespace Chat_Library
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (line.Contains(newUser.UserName))
+                    dynamic data = JObject.Parse(line);
+                    if (data.UserName == username)
                     {
                         changeStatus = true;
                         existingUser = DeSerializeAccount(line);
@@ -125,7 +126,8 @@ namespace Chat_Library
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (line.Contains(username))
+                    dynamic data = JObject.Parse(line);
+                    if (data.UserName == username)
                     {
                         return DeSerializeAccount(line);
                     }
