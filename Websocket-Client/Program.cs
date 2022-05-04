@@ -30,7 +30,7 @@ namespace Websocket_Client_Chat
             
 
             logInForm.SetUp(controller.CheckDatabase, controller.AddToContactListLogic, 
-                controller.UpdateContactListLogic, controller.RemoveContactListLogic,controller.LogoutLogic);
+                controller.UpdateContactListLogic, controller.RemoveContactListLogic,controller.LogoutLogic, controller.setNameLogic);
             //Application.Run(logInForm);
             //uxCredentialsForm f =
             //string name = GetName();
@@ -38,6 +38,7 @@ namespace Websocket_Client_Chat
             controller.MessageReceived += f.MessageReceived;
 
             Application.Run(logInForm);
+            
         }
 
         // Ask for a name (that is a non-empty string)

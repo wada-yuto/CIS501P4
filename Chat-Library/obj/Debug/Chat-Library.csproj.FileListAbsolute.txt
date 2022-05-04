@@ -75,3 +75,14 @@ C:\Users\yuto808263\Desktop\CIS501P4\Chat-Library\obj\Debug\Chat-Library.csproj.
 C:\Users\yuto808263\Desktop\CIS501P4\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
 C:\Users\yuto808263\Desktop\CIS501P4\Chat-Library\obj\Debug\Chat-Library.dll
 C:\Users\yuto808263\Desktop\CIS501P4\Chat-Library\obj\Debug\Chat-Library.pdb
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\Chat-Library.dll
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\Chat-Library.pdb
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\websocket-sharp.dll
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\bin\Debug\websocket-sharp.xml
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.csproj.AssemblyReference.cache
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.csproj.CoreCompileInputs.cache
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.dll
+C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.pdb

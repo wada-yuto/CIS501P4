@@ -12,15 +12,20 @@ namespace Websocket_Client_Chat
     public delegate bool Message(string message);
     public class ChatController
     {
-        private string name;
+        private string _name;
         public WebSocket ws;
+
+        public string Name 
+        { 
+            get { return _name; }
+            set { _name = value; }
+        }
 
         // Event for when a message is received from the server
         public event Message MessageReceived;
         public ChatController()
         {
-            //this.name = name;
-
+            
             //// Connects to the server
             ws = new WebSocket("ws://127.0.0.1:8001/chat");
             ws.OnMessage += (sender, e) => { if (MessageReceived != null) MessageReceived(e.Data); };
@@ -33,7 +38,7 @@ namespace Websocket_Client_Chat
             // Send the message to the server if connection is alive
             if (ws.IsAlive)
             {
-                ws.Send(name + ": " + message);
+                ws.Send(Name + ": " + message);
                 return true;
             }
             else
@@ -73,6 +78,11 @@ namespace Websocket_Client_Chat
             DatabaseProxy database = new DatabaseProxy();
             User user = database.RemoveContact(username);
             return user;
+        }
+
+        public void setNameLogic(User u)
+        {
+            Name = u.UserName;
         }
 
         public void LogoutLogic(IUser user)

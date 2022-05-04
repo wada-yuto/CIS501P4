@@ -19,6 +19,7 @@ namespace Websocket_Client
         private UpdateContactListDel UpdateContactDelegate;
         private RemoveContactDel RemoveContactDelegate;
         private LogoutDel LogoutDelegate;
+
         private string username;
         private ChatForm form;
         public ContactForm(User user, ChatForm chatform, AddToContactDel AddToContactDelegate, UpdateContactListDel UpdateContactDelegate, 
@@ -60,9 +61,9 @@ namespace Websocket_Client
             }
             else
             {
-                MessageBox.Show(user.Contacts.Count.ToString());
+                //MessageBox.Show(user.Contacts.Count.ToString());
                 this.user.Contacts.Add(user);
-                MessageBox.Show(user.Contacts.Count.ToString());
+                //MessageBox.Show(user.Contacts.Count.ToString());
                 MessageBox.Show("This user has been added to your contact");
             }
             UpdateContactDelegate(this.user);
@@ -74,7 +75,15 @@ namespace Websocket_Client
 
         private void uxStartChatButton_Click(object sender, EventArgs e)
         {
-            form.Show();
+            User u = this.user;
+            User other = (User)uxFriendListListBox.SelectedItem;
+            List<User> usersInChat = new List<User>();
+            usersInChat.Add(u);
+            usersInChat.Add(other);
+            form.UsersInChat = usersInChat;
+            ChatForm cf = form;
+            cf.SetName();
+            cf.Show();
         }
 
         private void uxStartChatting_Click(object sender, EventArgs e)
@@ -114,7 +123,7 @@ namespace Websocket_Client
                     }
                     continue;
                 }
-                MessageBox.Show(user.Contacts.Count.ToString());
+                //MessageBox.Show(user.Contacts.Count.ToString());
                 
                 MessageBox.Show("This user has been removed from your contact list");
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat_Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,13 @@ namespace Websocket_Client
 {
     public partial class ChatForm : Form
     {
+        private List<User> _usersInChat;
         public ChatForm(Message newMessageHandler)
         {
             InitializeComponent();
 
+             
             // Add name in the form's title
-            Text = "Chat: " + "Yuto";
-
             // Whenever the Enter key is pressed inside the messageTextBox,
             //   pass the message to newMessageHandler
             //   if successfully handled, clear out the messageTextBox
@@ -40,6 +41,27 @@ namespace Websocket_Client
             uxMessageTextBox.Select();
         }
 
+
+
+        public List<User> UsersInChat
+        {
+            get { return _usersInChat; }
+            set { _usersInChat = value; }
+        }
+
+        public void SetName()
+        {
+            if (UsersInChat != null)
+            {
+                string allUsers = "";
+                foreach (User u in UsersInChat)
+                {
+                    allUsers += " " + u.UserName;
+                }
+                Text = "Chat: " + allUsers;
+            }
+            
+        }
         public bool MessageReceived(string message)
         {
             // Add message to messageListBox and scroll to bottom
