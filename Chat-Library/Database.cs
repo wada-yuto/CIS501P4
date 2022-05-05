@@ -81,8 +81,7 @@ namespace Chat_Library
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    dynamic data = JObject.Parse(line);
-                    if (data.UserName == username)
+                    if (line.Contains(newUser.UserName))
                     {
                         changeStatus = true;
                         existingUser = DeSerializeAccount(line);
@@ -94,7 +93,7 @@ namespace Chat_Library
             }
             if (changeStatus)
             {
-                existingUser.ChangeStatus("Online");
+                existingUser.Status ="Online";
                 UpdateContact(existingUser);
             }
             if (!exist)
@@ -114,7 +113,7 @@ namespace Chat_Library
 
         public void Logout(IUser user)
         {
-            user.ChangeStatus("Offline");
+            user.Status = "Offline";
             UpdateContact(user);
 
         }
@@ -162,7 +161,7 @@ namespace Chat_Library
 
         public void UpdateContact(IUser user)
         {
-            int lineNumber = GetLine(user.GetUsername());
+            int lineNumber = GetLine(user.UserName);
             string account = SerializeAccount(user);
             LineChanger(account, lineNumber);
         }
@@ -242,7 +241,7 @@ namespace Chat_Library
                 {
                     IUser user = DeSerializeAccount(sr.ReadLine());
                     users.Add(user);
-                    if (user.GetStatus().Equals("Online"))
+                    if (user.Status.Equals("Online"))
                     {
                         OnlineUsers.Add(user);
                     }

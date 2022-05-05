@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat_Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,20 +14,24 @@ namespace Websocket_Server
     {
         static void Main(string[] args)
         {
-           
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+
             var wss = new WebSocketServer(8001);
+
             AdminLogin adminlogin = new AdminLogin();
-            Server serv = new Server();
-            AdminPanel adminPanel = new AdminPanel();
-            serv.SetUp(adminPanel.UpdateOnlineUserList);
+            AdminPanel panel = new AdminPanel();
+           
 
             //hard coded admin
             
 
             wss = new WebSocketServer(8001);
 
-            // Add the Echo websocket service
-            wss.AddWebSocketService<Echo>("/echo");
+            Database database = new Database();
+            List<IUser> u = new List<IUser>();
+            List<IUser> u2 = new List<IUser>();
 
             // Add the Chat websocket service
             wss.AddWebSocketService<Server>("/chat");

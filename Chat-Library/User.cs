@@ -12,8 +12,8 @@ namespace Chat_Library
         private string _username;
         private string _password;
         private string _status;
-        private BindingList<User> _contacts = new BindingList<User>();
-        private int _id;
+        private List<User> _contacts = new List<User>();
+        private string _id;
 
         public string UserName
         {
@@ -28,7 +28,7 @@ namespace Chat_Library
             set { _password = value; }
         }
 
-        public BindingList<User> Contacts
+        public List<User> Contacts
         {
             get { return _contacts; }
             set { _contacts = value; }
@@ -41,39 +41,14 @@ namespace Chat_Library
             set { _status = value; }
         }
 
-        public int ServerID
+        public string ServerID
         {
             get { return _id; }
             set { _id = value; }
         }
 
-        public string GetUsername()
-        {
-            return this.UserName;
-        }
 
-        public string GetPassword()
-        {
-            return this.Password;
-        }
-
-        public string GetStatus()
-        {
-            return this.Status;
-        }
-
-        public int GetServerID()
-        {
-            return this.ServerID;
-        }
-
-        public void ChangeStatus(string status)
-        {
-            Status = status;
-        }
-
-
-        public BindingList<User> GetContactList()
+        public List<User> GetContactList()
         {
             return this.Contacts;
         }
@@ -90,5 +65,19 @@ namespace Chat_Library
             return UserName;
         }
 
+        public void AddContact(object user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveContact(object user)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<IUser> IUser.GetContactList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -86,3 +86,14 @@ C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.cs
 C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete
 C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.dll
 C:\Users\ethan\Desktop\WorkingOnFinalProj\Chat-Library\obj\Debug\Chat-Library.pdb
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\obj\Debug\Chat-Library.csproj.AssemblyReference.cache
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\obj\Debug\Chat-Library.csproj.CoreCompileInputs.cache
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\obj\Debug\Chat-Library.dll
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\obj\Debug\Chat-Library.pdb
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\Chat-Library.dll
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\Chat-Library.pdb
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\websocket-sharp.dll
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\bin\Debug\websocket-sharp.xml
+C:\Users\tucke\Desktop\FInalP4.2\Chat-Library\obj\Debug\Chat-Library.csproj.CopyComplete

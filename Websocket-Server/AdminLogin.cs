@@ -15,7 +15,6 @@ namespace Websocket_Server
    
     public partial class AdminLogin : Form
     {
-        private UpdateOnlineUserListDel UpdateOnlineUserListDelegate;
         private string username;
         private string password;
         private Database database = new Database();
@@ -58,9 +57,9 @@ namespace Websocket_Server
             password = GetPassword();
             foreach (IUser user in database.AdminUsers)
             {
-                if (user.GetUsername().Equals(username))
+                if (user.UserName.Equals(username))
                 {
-                    if (user.GetPassword().Equals(password))
+                    if (user.Password.Equals(password))
                     {
                         //wss.Start();
                         //Console.WriteLine("Server started on port " + wss.Port);

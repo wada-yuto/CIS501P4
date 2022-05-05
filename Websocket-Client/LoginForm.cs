@@ -72,6 +72,7 @@ namespace Websocket_Client
             username = GetUsername();
             password = GetPassword();
             User user = (User)CheckDatabaseDelegate(username, password);
+            
             ContactForm contactForm = new ContactForm(user,form,AddToContactDelegate,UpdateContactListDelegate,
             RemoveContactDelegate,LogoutDelegate);
             NameDelegate(user);

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Websocket_Server
 {
     partial class AdminPanel

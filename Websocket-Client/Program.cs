@@ -35,7 +35,7 @@ namespace Websocket_Client_Chat
             //uxCredentialsForm f =
             //string name = GetName();
 
-            controller.MessageReceived += f.MessageReceived;
+            controller.FormMessage += f.MessageReceived;
 
             Application.Run(logInForm);
             

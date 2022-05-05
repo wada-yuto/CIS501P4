@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Websocket_Client_Chat;
 
 namespace Chat_Library
 {
@@ -11,22 +12,33 @@ namespace Chat_Library
         /// <summary>
         /// List of all the Online Users
         /// </summary>
-        public List<IUser> OnlineUsers;
+        public List<IUser> OnlineUsers { get; set; }
 
-        private Database database;
+        public IUser proxyUser { get; set; }
+        public Database database { get; set; }
 
         public DatabaseProxy()
         {
             
         }
 
+        public DatabaseProxy(Database databaseproxy)
+        {
+            OnlineUsers = new List<IUser>();
+            database = databaseproxy;
+            foreach(User u in databaseproxy.OnlineUsers)
+            {
+                OnlineUsers.Add((IUser)u);
+            }
+        }
+
         public IUser Login(string username, string password)
         {
-            if(database == null)
-            {
-                database = new Database();
-            }
-            return database.Login(username, password);
+            IUser user = new ProxyUser();
+            proxyUser = database.Login(username, password);
+            user = this.proxyUser;
+            return user;
+
         }
 
         public void Logout(string username)

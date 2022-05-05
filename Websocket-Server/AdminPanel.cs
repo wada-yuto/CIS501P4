@@ -17,10 +17,8 @@ namespace Websocket_Server
         List<IUser> users = new List<IUser>();
         public AdminPanel()
         {
-            users = database.GetUsersFromFile();
             InitializeComponent();
-            // updates the listboxes of all users in the database
-            UpdateUserList();
+
         }
 
 
@@ -29,15 +27,19 @@ namespace Websocket_Server
         /// depending on the status of the users
         /// </summary>
         /// <param name="activeUsers">List of all users in the database</param>
-        public void UpdateUserList()
+        public void UpdateUserList(List<IUser> ActiveUser)
         {
-            // updates the listboxes of all users in the database
-            uxAllUsersListBox.DataSource = null;
-            uxAllUsersListBox.DataSource = users;
+            if (uxAllUsersListBox.InvokeRequired)
+            {
+                uxAllUsersListBox.Invoke(new MethodInvoker(delegate { uxAllUsersListBox.DataSource = ActiveUser; }));
+            }
+            else
+            {
+                uxAllUsersListBox.DataSource = ActiveUser;
+                uxAllUsersListBox.Update();
 
-            // updates the list box of all online users
-            uxOnlineUsersListBox.DataSource = null;
-            uxOnlineUsersListBox.DataSource = database.OnlineUsers;
+
+            }
         }
 
         public void UpdateOnlineUserList(List<IUser> activeUsers)
@@ -52,7 +54,8 @@ namespace Websocket_Server
                 uxOnlineUsersListBox.Update();
             }
         }
-        public void UpdateChatList(List<IUser> ActiveChats)
+
+        public void UpdateChatList(List<IUser> ActiveUsers)
         {
 
         }
@@ -61,5 +64,6 @@ namespace Websocket_Server
         {
 
         }
+
     }
 }

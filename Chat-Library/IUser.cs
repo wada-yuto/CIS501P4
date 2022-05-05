@@ -13,17 +13,20 @@ namespace Chat_Library
     public interface IUser
     {
 
-        string GetUsername();
+        string UserName { get; set; }
 
-        string GetPassword();
+        string Password { get; set; }
 
-        string GetStatus();
+        string Status { get; set; }
 
-        int GetServerID();
+        string ServerID { get; set; }
 
-        void ChangeStatus(string status);
+        void AddContact(object user);
 
-        BindingList<User> GetContactList();
+        void RemoveContact(object user);
+
+        List<IUser> GetContactList();
+
 
 
     }
